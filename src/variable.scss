@@ -1,0 +1,75 @@
+:root {
+    --main-color-blue: #1264E0;
+    --main-color-orange: #F38A0F;
+    --main-color-green: #38CA20;
+    --main-color-red: #F75826;
+    --main-color-white: #FFFFFF;
+
+    --main-color-blue-dark: #234B70;
+    --main-color-blue-gray:#B1BBC9;
+
+    --text-color3: #3A3A3A;
+    --text-color4: #33608A;
+    --text-color1: #8AA2C5;
+    --text-color2: #CAD5E8;
+    --text-color6: #67A3FE;
+    --text-color5: #88B9F3;
+
+    --text-color-link:var(--main-color-blue);
+
+    --background-color1: #F0F8FF;
+    --background-color2: #F5F8FF;
+    --background-color3: #EBF2FF;
+
+    --divider-color: #E6EFF8;
+    --stroke-color1: #C1D4EF;
+    --stroke-color2: #67A3FE;
+    
+    --font-size12: 12px;
+    --line-height18: 18px;
+
+    --font-size14: 14px;
+    --line-height20: 20px;
+
+    --font-size16: 16px;
+    --line-height22: 22px;
+
+    --font-size18: 18px;
+    --line-height24: 24px;
+
+    --font-size20: 20px;
+    --line-height26: 26px;
+
+    --font-size22: 22px;
+    --line-height28: 28px;
+
+    --book-cover-container-width1: 60px;
+    --book-cover-container-height1: 84px;
+    --book-cover-container-width2: 80px;
+    --book-cover-container-height2: 112px;
+    --book-cover-image-width1: calc(var(--book-cover-container-width1) * 0.88);
+    --book-cover-image-height1: calc(var(--book-cover-container-height1) * 0.88);
+    --book-cover-image-width2: calc(var(--book-cover-container-width2) * 0.88);
+    --book-cover-image-height2: calc(var(--book-cover-container-height2) * 0.88);
+
+}
+
+:root {
+    --main-font-size1: var(--font-size12);
+    --main-line-height1: var(--line-height18);
+    --main-font-size2: var(--font-size14);
+    --main-line-height2: var(--line-height20);
+    --main-font-size3: var(--font-size16);
+    --main-line-height3: var(--line-height22);
+    --main-font-size4: var(--font-size18);
+    --main-line-height4: var(--line-height24);
+}
+
+body.theme-elder {
+    --main-font-size1: var(--font-size16);
+    --main-line-height1: var(--line-height22);
+    --main-font-size2: var(--font-size20);
+    --main-line-height2: var(--line-height26);
+    --main-font-size3: var(--font-size22);
+    --main-line-height3: var(--line-height28);
+}
