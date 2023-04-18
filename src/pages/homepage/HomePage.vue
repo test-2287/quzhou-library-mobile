@@ -1,5 +1,5 @@
 <script setup>
-// import EcardSvgIcon from './assets/homepage-nav-ecard.svg'
+import EcardSvgIcon from '../../assets/homepage-nav-ecard.svg'
 
 import SvgIcon from '@/components/SvgIcon.vue';
 import BookCard from '@/components/BookCard.vue';
@@ -61,7 +61,8 @@ const bookProps2 = {
                     <SvgIcon name="homepage-nav-rank" class="icon" />
                 </router-link>
                 <router-link to="/ecard">
-                    <SvgIcon name="homepage-nav-ecard" class="icon" />
+                    <!-- <SvgIcon name="homepage-nav-ecard" class="icon" /> -->
+                    <img :src="EcardSvgIcon" alt="" class="icon">
                 </router-link>
                 <router-link to="/my-borrow">
                     <SvgIcon name="homepage-nav-renewal" class="icon" />
@@ -422,6 +423,7 @@ const bookProps2 = {
 }
 
 .contact-box {
+    margin-top: 28px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -610,6 +612,9 @@ const bookProps2 = {
 }
 
 .homepage-lib_recommend {
+    background-image: url('../../assets/homepage-lib-recommend-bg.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
 
     .section-content {
         padding-top: 20px;

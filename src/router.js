@@ -109,6 +109,10 @@ const routes = [
     {
         path: '/pay-result',
         component: () => import('@/pages/PayResult.vue')
+    },
+    {
+        path: '/my-feedback',
+        component: () => import('@/pages/MyFeedback.vue')
     }
 
 ]
