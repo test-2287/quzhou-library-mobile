@@ -2,6 +2,7 @@
 import SearchBox from '@/components/SearchBox.vue'
 import TagButton from '@/components/TagButton.vue';
 import BookCard from '@/components/BookCard.vue';
+import EmptyImage from '@/assets/search-empty.svg';
 import { ref, reactive } from 'vue'
 
 const searchText = ref('')
@@ -141,9 +142,13 @@ const bookProps2 = {
         <div class="search-result">
             <div class="result-text">搜索到相关书籍 29834 本</div>
             <div class="book-list">
-                <BookCard v-bind="bookProps"/>
-                <BookCard v-bind="bookProps2"/>
+                <BookCard v-bind="bookProps" />
+                <BookCard v-bind="bookProps2" />
             </div>
+        </div>
+        <div class="empty">
+            <img :src="EmptyImage" alt="">
+            <div class="text">暂无相关书籍</div>
         </div>
     </div>
 </template>
@@ -241,8 +246,31 @@ const bookProps2 = {
             color: var(--text-color2);
             margin-bottom: 12px;
         }
+
         .book-card:not(:last-child) {
             border-bottom: 1px solid var(--divider-color);
+        }
+
+    }
+
+    .empty {
+        height: 100vh;
+        padding-top: 188px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+
+        img {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 20px;
+        }
+
+        .text {
+            font-size: 14px;
+            line-height: 20px;
+            color: var(--text-color2);
         }
     }
 }
