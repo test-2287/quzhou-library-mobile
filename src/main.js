@@ -21,7 +21,9 @@ import {
     Dialog,
     Cascader,
     Radio,
-    RadioGroup
+    RadioGroup,
+    Toast,
+    Overlay
 } from 'vant';
 
 // import { Form, Field } from 'vee-validate';
@@ -44,6 +46,8 @@ app.use(router)
     .use(Cascader)
     .use(Radio)
     .use(RadioGroup)
+    .use(Toast)
+    .use(Overlay)
     // .use(Form)
     // .use(Field)
 

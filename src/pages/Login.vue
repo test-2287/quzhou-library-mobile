@@ -41,8 +41,7 @@ const rules = reactive({
     ],
     code: [
         { required: true, message: '请输入验证码' },
-    ],
-
+    ]
 });
 
 const validate = () => {

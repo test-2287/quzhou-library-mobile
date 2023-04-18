@@ -67,7 +67,7 @@ const bookProps2 = {
                 <router-link to="/my-borrow">
                     <SvgIcon name="homepage-nav-renewal" class="icon" />
                 </router-link>
-                <router-link to="">
+                <router-link to="/feedback">
                     <SvgIcon name="homepage-nav-comment" class="icon" />
                 </router-link>
                 <router-link to="/order-list">
@@ -81,12 +81,14 @@ const bookProps2 = {
                 </router-link>
             </div>
 
-            <div class="homepage-notification">
-                <div class="label-box">
-                    <span>通知</span>
+            <router-link to='/notice'>
+                <div class="homepage-notification">
+                    <div class="label-box">
+                        <span>通知</span>
+                    </div>
+                    <div class="notification-box">图书馆一键借阅正式上线啦！</div>
                 </div>
-                <div class="notification-box">图书馆一键借阅正式上线啦！</div>
-            </div>
+            </router-link>
 
             <div class="section-type-normal homepage-newbooks">
                 <div class="header space-between-box">
@@ -200,7 +202,7 @@ const bookProps2 = {
                 </div>
             </div>
 
-            <router-link to="/ecard">
+            <router-link to="/ecard-register">
                 <div class="ecard-banner"></div>
             </router-link>
 
@@ -215,23 +217,23 @@ const bookProps2 = {
                             <BookCard v-bind="bookProps" :showRank="true" :rank="index" />
                         </router-link>
                     </div>
-                <router-link to="/book-category?cateid=3">
-                    <div class="check-all">查看所有</div>
-                </router-link>
-            </div>
-        </div>
-
-        <div class="section-type-color homepage-book_list">
-            <div class="header">
-                <div class="header-text">社会科学</div>
-            </div>
-            <div class="section-content">
-                <div class="books grid col2">
-                    <router-link to="/book-detail" v-for="index in 6">
-                        <BookCard v-bind="bookProps2" />
+                    <router-link to="/book-category?cateid=3">
+                        <div class="check-all">查看所有</div>
                     </router-link>
                 </div>
-                <router-link to="/book-category?cateid=4">
+            </div>
+
+            <div class="section-type-color homepage-book_list">
+                <div class="header">
+                    <div class="header-text">社会科学</div>
+                </div>
+                <div class="section-content">
+                    <div class="books grid col2">
+                        <router-link to="/book-detail" v-for="index in 6">
+                            <BookCard v-bind="bookProps2" />
+                        </router-link>
+                    </div>
+                    <router-link to="/book-category?cateid=4">
                         <div class="check-all">查看所有</div>
                     </router-link>
                 </div>
@@ -249,7 +251,6 @@ const bookProps2 = {
 </template>
 
 <style scoped lang="scss">
-
 .homepage {
     position: relative;
     padding: 0 16px;
