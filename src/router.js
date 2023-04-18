@@ -125,6 +125,14 @@ const routes = [
     {
         path: '/notice-detail',
         component: () => import('@/pages/NoticeDetail.vue')
+    },
+    {
+        path: '/search',
+        component: () => import('@/pages/Search.vue')
+    },
+    {
+        path: '/search-result',
+        component: () => import('@/pages/SearchResult.vue')
     }
 
 ]

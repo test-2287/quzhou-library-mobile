@@ -23,7 +23,9 @@ import {
     Radio,
     RadioGroup,
     Toast,
-    Overlay
+    Overlay,
+    DropdownMenu,
+    DropdownItem
 } from 'vant';
 
 // import { Form, Field } from 'vee-validate';
@@ -48,6 +50,8 @@ app.use(router)
     .use(RadioGroup)
     .use(Toast)
     .use(Overlay)
+    .use(DropdownMenu)
+    .use(DropdownItem)
     // .use(Form)
     // .use(Field)
 

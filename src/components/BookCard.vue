@@ -25,6 +25,14 @@ const props = defineProps({
     showLocation: {
         type: Boolean,
         default: false
+    },
+    inlib: {
+        type: Boolean,
+        default: false
+    },
+    inStore: {
+        type: Boolean,
+        default: false
     }
 })
 
@@ -32,8 +40,8 @@ const props = defineProps({
 
 <template>
     <div class="book-card">
-        <i class="icon-rank" v-if="showRank" 
-        :style="{backgroundImage: `url(${Number(rank) <= 3 ? IconRankOrange : IconRankBlue})`}">{{ rank }}</i>
+        <i class="icon-rank" v-if="showRank"
+            :style="{ backgroundImage: `url(${Number(rank) <= 3 ? IconRankOrange : IconRankBlue})` }">{{ rank }}</i>
         <div class="book-cover">
             <img :src="image" alt="">
         </div>
@@ -44,8 +52,14 @@ const props = defineProps({
             <div class="book-time" v-if="time">{{ time }}</div>
             <div class="book-isbn" v-if="isbn">ISBN: {{ isbn }}</div>
             <div class="in-lib" v-if="showLocation">
-                <i class="icon-lib">馆</i>
-                <span>衢州市图书馆</span>
+                <template v-if="inlib">
+                    <i class="icon-lib lib">馆</i>
+                    <span>衢州市图书馆</span>
+                </template>
+                <template v-if="inStore">
+                    <i class="icon-lib store">店</i>
+                    <span>新华书馆</span>
+                </template>
             </div>
         </div>
     </div>
@@ -83,6 +97,7 @@ const props = defineProps({
         display: flex;
         align-items: center;
         justify-content: center;
+
         img {
             width: var(--book-cover-image-width1);
         }
@@ -133,6 +148,12 @@ const props = defineProps({
                 font-size: 10px;
                 line-height: 14px;
                 color: #fff;
+                &.lib {
+                    background: linear-gradient(135deg, #9CB8FF 0%, #1264E0 100%);
+                }
+                &.store {
+                    background: linear-gradient(135deg, #FFBA7B 0%, #E41B1B 100%);
+                }
             }
         }
     }
