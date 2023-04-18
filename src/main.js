@@ -18,8 +18,13 @@ import {
     CheckboxGroup,
     Popup,
     Picker,
-    Dialog
-} from 'vant'
+    Dialog,
+    Cascader,
+    Radio,
+    RadioGroup
+} from 'vant';
+
+// import { Form, Field } from 'vee-validate';
 
 
 const app = createApp(App)
@@ -36,6 +41,11 @@ app.use(router)
     .use(Popup)
     .use(Picker)
     .use(Dialog)
+    .use(Cascader)
+    .use(Radio)
+    .use(RadioGroup)
+    // .use(Form)
+    // .use(Field)
 
 
 app.mount('#app')

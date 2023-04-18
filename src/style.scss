@@ -1,4 +1,3 @@
-
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -91,7 +90,7 @@ button:focus-visible {
 
 
 
-@import './variable.scss';   // 和全局按需引入有区别，全局是在每个style tag(dev)或者css文件(prod)上都加上
+@import './variable.scss'; // 和全局按需引入有区别，全局是在每个style tag(dev)或者css文件(prod)上都加上
 
 * {
   margin: 0;
@@ -111,7 +110,8 @@ button:focus-visible {
   -webkit-text-size-adjust: 100%;
 }
 
-input, input:focus {
+input,
+input:focus {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -126,16 +126,142 @@ input, input:focus {
 
 #app {
   min-height: 100vh;
-  background-color: #DEE7F5;
+  background-color: var(--background-color1);
 }
 
 .flex {
   display: flex;
 }
+
 .space-between-box {
   display: flex;
   justify-content: space-between;
 }
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
   display: grid;
+}
+
+.dialog-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  padding-bottom: 20px;
+
+  &.center {
+    justify-content: center;
+  }
+
+  .dialog-button {
+    width: 100px;
+    height: 42px;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size14);
+    line-height: var(--line-height20);
+    font-weight: bold;
+
+    &.cancel {
+      color: var(--text-color6);
+      border: 1px solid var(--stroke-color1);
+    }
+
+    &.confirm {
+      color: #fff;
+      background: var(--main-color-blue);
+    }
+  }
+}
+
+.form-box {
+  padding: 24px 22px 30px;
+  background-color: #fff;
+  border-radius: 8px;
+
+  .field {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      margin-bottom: 16px;
+
+      label {
+          font-size: var(--font-size14);
+          line-height: var(--line-height20);
+          color: var(--text-color4);
+          margin-bottom: 10px;
+      }
+
+      input {
+          width: 100%;
+          height: 40px;
+          border: 1px solid var(--stroke-color1);
+          border-radius: 6px;
+          padding: 0 10px;
+          font-size: var(--font-size14);
+          line-height: var(--line-height20);
+
+          &::placeholder,
+          &::-webkit-input-placeholder {
+              color: var(--text-color2);
+          }
+      }
+
+      .picker {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          height: 40px;
+          border: 1px solid var(--stroke-color1);
+          border-radius: 6px;
+          padding: 0 10px;
+          font-size: var(--font-size14);
+          line-height: var(--line-height20);
+          color: var(--text-color4);
+
+          .icon {
+              width: 16px;
+              height: 16px;
+          }
+      }
+
+      .error-message {
+          color: #FF6969;
+          font-size: var(--font-size12);
+          line-height: var(--line-height18);
+          margin-top: 6px;
+      }
+
+      &.error {
+          input {
+              border-color: #FF6969;
+          }
+          .picker {
+              border-color: #FF6969;
+          }
+      }
+  }
+
+  .button {
+      width: 100%;
+      height: 42px;
+      background-color: var(--main-color-blue);
+      border-radius: 6px;
+      font-size: var(--font-size14);
+      line-height: var(--line-height20);
+      color: #fff;
+      text-align: center;
+      line-height: 40px;
+      margin-top: 20px;
+      font-weight: bold;
+  }
 }

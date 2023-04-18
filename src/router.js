@@ -85,6 +85,30 @@ const routes = [
     {
         path: '/receiver-add',
         component: () => import('@/pages/ReceiverAdd.vue')
+    },
+    {
+        path: '/changepwd',
+        component: () => import('@/pages/ChangePwd.vue')
+    },
+    {
+        path: '/ecard',
+        component: () => import('@/pages/Ecard.vue')
+    },
+    {
+        path: '/ecard-register',
+        component: () => import('@/pages/EcardRegister.vue')
+    },
+    {
+        path: '/login',
+        component: () => import('@/pages/Login.vue')
+    },
+    {
+        path: '/user-center',
+        component: () => import('@/pages/UserCenter.vue')
+    },
+    {
+        path: '/pay-result',
+        component: () => import('@/pages/PayResult.vue')
     }
 
 ]

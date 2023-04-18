@@ -2,6 +2,9 @@
 import BookCard from '@/components/BookCard.vue';
 import SvgIcon from '@/components/SvgIcon.vue';
 import { ref } from 'vue'
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
 
 const bookProps = {
     title: '哲学，为人生烦恼找答案',
@@ -13,12 +16,14 @@ const collapse = ref(true);
 const toggleCollapse = () => {
     collapse.value = !collapse.value;
 }
+
+const paymentMethod = ref('');
 </script>
 
 <template>
     <div class="order-page">
         <div class="receiver-section">
-            <div class="add-receiver">
+            <div class="add-receiver" @click="router.push('/receiver-add')">
                 <SvgIcon name="order-add-receiver" class="icon" />
                 添加新地址
             </div>
@@ -90,24 +95,26 @@ const toggleCollapse = () => {
         </div>
 
         <div class="payment-method">
-            <div class="space-between-box payment-option wechat">
-                <div class="box-left">
-                    <SvgIcon name="order-wechatpay" class="icon" />
-                    <span>微信支付</span>
+            <van-radio-group v-model="paymentMethod">
+                <div class="space-between-box payment-option wechat">
+                    <div class="box-left">
+                        <SvgIcon name="order-wechatpay" class="icon" />
+                        <span>微信支付</span>
+                    </div>
+                    <div class="box-right">
+                        <van-radio name="wechat"/>
+                    </div>
                 </div>
-                <div class="box-right">
-                    <van-checkbox />
+                <div class="space-between-box payment-option alipay">
+                    <div class="box-left">
+                        <SvgIcon name="order-alipay" class="icon" />
+                        <span>支付宝支付</span>
+                    </div>
+                    <div class="box-right">
+                        <van-radio name="alipay"/>
+                    </div>
                 </div>
-            </div>
-            <div class="space-between-box payment-option alipay">
-                <div class="box-left">
-                    <SvgIcon name="order-alipay" class="icon" />
-                    <span>支付宝支付</span>
-                </div>
-                <div class="box-right">
-                    <van-checkbox></van-checkbox>
-                </div>
-            </div>
+            </van-radio-group>
         </div>
 
         <div class="bottom-bar space-between-box">
@@ -357,7 +364,7 @@ const toggleCollapse = () => {
         box-shadow: 0px 8px 8px rgba(136, 183, 252, 0.06);
         align-items: center;
 
-        >div {
+        .payment-option {
             padding: 16px 0;
 
             &:not(:last-child) {
@@ -430,4 +437,5 @@ const toggleCollapse = () => {
             }
         }
     }
-}</style>
+}
+</style>

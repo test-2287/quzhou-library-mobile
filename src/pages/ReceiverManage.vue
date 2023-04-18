@@ -1,7 +1,14 @@
 <script setup>
+import { useRouter } from 'vue-router';
 import SvgIcon from '@/components/SvgIcon.vue';
-import {ref} from 'vue';
+import { ref } from 'vue';
 const dialogShow = ref(false)
+
+const router = useRouter()
+const goReceiverAdd = () => {
+    router.push('/receiver-add')
+}
+
 </script>
 
 <template>
@@ -10,7 +17,7 @@ const dialogShow = ref(false)
         <div class="page-content receiver-list">
             <div class="receiver-card">
                 <div class="card-content">
-                    <SvgIcon name="map-pin" class="icon-map"/>
+                    <SvgIcon name="map-pin" class="icon-map" />
                     <div class="receiver-info">
                         <div class="receiver-address">湖南省常德市鼎城区钱家坪乡 17 单元 88 室</div>
                         <div class="receiver-phone-number">电话：17037259611</div>
@@ -20,15 +27,15 @@ const dialogShow = ref(false)
                 <div class="space-between-box card-bottom">
                     <span class="default-text">默认地址</span>
                     <div class="action-box">
-                        <SvgIcon name="delete" class="delete" @click="dialogShow = true"/>
-                        <SvgIcon name="edit" class="edit"/>
+                        <SvgIcon name="delete" class="delete" @click="dialogShow = true" />
+                        <SvgIcon name="edit" class="edit" @click="goReceiverAdd" />
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="bottom-bar">
-            <div class="button add-new">添加新地址</div>
+            <div class="button add-new" @click="goReceiverAdd">添加新地址</div>
         </div>
 
         <van-dialog v-model:show="dialogShow" width="260" title="你确定删除地址吗？">
@@ -119,6 +126,7 @@ const dialogShow = ref(false)
             .delete {
                 color: var(--text-color2);
             }
+
             .edit {
                 color: var(--text-color1);
             }
@@ -134,6 +142,7 @@ const dialogShow = ref(false)
         background-color: #fff;
         z-index: 10;
         width: 100vw;
+
         .button {
             background-color: var(--main-color-blue);
             border-radius: 8px;

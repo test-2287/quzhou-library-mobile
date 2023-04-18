@@ -66,13 +66,13 @@ const bookProps2 = {
                 <router-link to="/my-borrow">
                     <SvgIcon name="homepage-nav-renewal" class="icon" />
                 </router-link>
-                <router-link to="/qa">
+                <router-link to="">
                     <SvgIcon name="homepage-nav-comment" class="icon" />
                 </router-link>
                 <router-link to="/order-list">
                     <SvgIcon name="homepage-nav-myorder" class="icon" />
                 </router-link>
-                <router-link to="/register">
+                <router-link to="/ecard-register">
                     <SvgIcon name="homepage-nav-online_register" class="icon" />
                 </router-link>
                 <router-link to="/my-collection">
