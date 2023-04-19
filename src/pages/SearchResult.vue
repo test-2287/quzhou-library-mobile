@@ -254,7 +254,7 @@ const bookProps2 = {
     }
 
     .empty {
-        height: 100vh;
+        height: calc(100vh - 50px);
         padding-top: 188px;
         display: flex;
         flex-direction: column;

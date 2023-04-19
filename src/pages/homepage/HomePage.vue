@@ -238,15 +238,16 @@ const bookProps2 = {
                     </router-link>
                 </div>
 
-                <div class="contact-box">
-                    <span>本服务由浙江政务服务网、衢州市图书馆提供</span>
-                    <span>服务咨询热线：0570-3022207</span>
-                </div>
-
             </div>
 
-            <BottomNavigate />
+            <div class="contact-box">
+                <span>本服务由浙江政务服务网、衢州市图书馆提供</span>
+                <span>服务咨询热线：0570-3022207</span>
+            </div>
+
         </div>
+
+        <BottomNavigate />
     </div>
 </template>
 

@@ -1,25 +1,48 @@
 <script setup>
 import SvgIcon from '@/components/SvgIcon.vue';
+import { useRoute } from 'vue-router';
+
+const route = useRoute();
+
+const isActive = (path) => {
+    return route.path === path ? 'active' : '';
+};
+
+const navigateList = [
+    {
+        path: '/',
+        name: 'bottom-homepage',
+        text: '首页',
+    },
+    {
+        path: '/book-category',
+        name: 'bottom-category',
+        text: '书籍分类',
+    },
+    {
+        path: '/my-booklist',
+        name: 'bottom-booklist',
+        text: '我的书单',
+    },
+    {
+        path: '/user-center',
+        name: 'bottom-usercenter',
+        text: '个人中心',
+    }
+];
+
+
+
 </script>
 
 <template>
     <div class="bottom-navigate">
-        <router-link to="/" class="navigate-item">
-            <SvgIcon name="bottom-homepage-line" class="icon" />
-            <span>首页</span>
+
+        <router-link :to="listItem.path" class="navigate-item" :class="{'active': isActive(listItem.path)}" v-for="listItem in navigateList">
+            <SvgIcon :name="`${listItem.name}-${isActive(listItem.path)? 'fill': 'line'}`" class="icon"/>
+            <span>{{ listItem.text }}</span>
         </router-link>
-        <router-link to="/book-category" class="navigate-item">
-            <SvgIcon name="bottom-category-line" class="icon" />
-            <span>书籍分类</span>
-        </router-link>
-        <router-link to="/my-booklist" class="navigate-item">
-            <SvgIcon name="bottom-booklist-line" class="icon" />
-            <span>我的书单</span>
-        </router-link>
-        <router-link to="/user-center" class="navigate-item">
-            <SvgIcon name="bottom-usercenter-line" class="icon" />
-            <span>个人中心</span>
-        </router-link>
+
     </div>
 </template>
 
@@ -51,6 +74,11 @@ import SvgIcon from '@/components/SvgIcon.vue';
             width: 24px;
             height: 24px;
             margin-bottom: 3px;
+        }
+
+        &.active {
+            color: #4E9FF0;
+            font-weight: bold;
         }
     }
 }
