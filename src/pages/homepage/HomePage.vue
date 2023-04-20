@@ -192,9 +192,10 @@ const bookProps2 = {
                 </div>
                 <div class="section-content">
                     <div class="books grid col2">
-                        <router-link to="/book-detail" v-for="index in 6">
-                            <BookCard v-bind="bookProps2" />
-                        </router-link>
+                        <!-- <router-link to="/book-detail" v-for="index in 6">
+                            <BookCard v-bind="bookProps2" v-for="index in 6" />
+                        </router-link> -->
+                        <BookCard v-bind="bookProps2" v-for="index in 6" />
                     </div>
                     <router-link to="/book-category?cateid=2">
                         <div class="check-all">查看所有</div>
@@ -213,9 +214,10 @@ const bookProps2 = {
                 </div>
                 <div class="section-content">
                     <div class="books rank">
-                        <router-link to="/book-detail" v-for="index in 5">
+                        <!-- <router-link to="/book-detail" v-for="index in 5">
                             <BookCard v-bind="bookProps" :showRank="true" :rank="index" />
-                        </router-link>
+                        </router-link> -->
+                        <BookCard v-bind="bookProps" :showRank="true" :rank="index" v-for="index in 5" />
                     </div>
                     <router-link to="/book-category?cateid=3">
                         <div class="check-all">查看所有</div>
@@ -229,9 +231,10 @@ const bookProps2 = {
                 </div>
                 <div class="section-content">
                     <div class="books grid col2">
-                        <router-link to="/book-detail" v-for="index in 6">
+                        <!-- <router-link to="/book-detail" v-for="index in 6">
                             <BookCard v-bind="bookProps2" />
-                        </router-link>
+                        </router-link> -->
+                        <BookCard v-bind="bookProps2" v-for="index in 6"/>
                     </div>
                     <router-link to="/book-category?cateid=4">
                         <div class="check-all">查看所有</div>
@@ -485,12 +488,15 @@ const bookProps2 = {
     overflow: hidden;
 
     .header {
-        background: linear-gradient(90deg, #57A4FF 0%, #57A4FF 23.44%, rgba(132, 188, 255, 0) 100%);
         padding: 15px 20px 12px;
         color: #fff;
         font-size: var(--main-font-size3);
         line-height: var(--main-line-height3);
         font-weight: bold;
+        background-image: linear-gradient(90deg, #57A4FF 0%, #57A4FF 23.44%, rgba(132, 188, 255, 0) 100%), url('./assets/homepage-section-head-bg.svg');
+        background-repeat: no-repeat;
+        background-position: right top;
+        /* background-color: linear-gradient(90deg, #57A4FF 0%, #57A4FF 23.44%, rgba(132, 188, 255, 0) 100%); */
     }
 
     .section-content {
@@ -709,7 +715,7 @@ const bookProps2 = {
 
 
             >a:not(:last-child) {
-                display: block;
+                /* display: block; */
                 margin-bottom: 12px;
             }
 

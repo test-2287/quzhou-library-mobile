@@ -133,9 +133,14 @@ input:focus {
   display: flex;
 }
 
-.space-between-box {
+.space-between-box, .space-between {
   display: flex;
   justify-content: space-between;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
 }
 
 .center {

@@ -28,6 +28,13 @@ const renew = () => {
 
 const renewSuccessDialog = ref(false)
 
+const listModel = ref(false)
+const checkAll = ref([])
+const borrowList  = ref(null)
+const toggleAll = () => {
+    borrowList.value.toggleAll(listModel.value);
+}
+
 </script>
 
 <template>
@@ -39,10 +46,10 @@ const renewSuccessDialog = ref(false)
         <div class="page-content">
             <div class="borrow-section">
 
-                <van-checkbox-group>
+                <van-checkbox-group v-model="checkAll" ref="borrowList">
 
                     <div class="borrow-item  select" v-for="index in 2">
-                        <van-checkbox />
+                        <van-checkbox :name="`book${index}`" />
                         <div class="item-right">
                             <BookCard v-bind="bookProps"/>
                             <div class="borrow-info-box">
@@ -75,7 +82,7 @@ const renewSuccessDialog = ref(false)
 
         <div class="bottom-bar space-between-box">
             <div class="checkall-box">
-                <van-checkbox></van-checkbox>
+                <van-checkbox  v-model="listModel" @change="toggleAll"></van-checkbox>
                 <span>全选</span>
             </div>
             <div class="submit-box">

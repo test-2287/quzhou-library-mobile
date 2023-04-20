@@ -76,9 +76,11 @@ const category = reactive([
 const route = useRoute()
 const cateId = route.query.cateid
 
+const cateCantainer = ref(null)
 const activeInex = cateId ? ref(cateId) : ref(0)
 const onSidebarChange = (index) => {
     activeInex.value = index
+    cateCantainer.value.scrollTop = 0
 }
 
 const bookProps = {
@@ -109,7 +111,7 @@ const bookProps = {
                 </van-sidebar>
             </div>
 
-            <div class="category-container">
+            <div class="category-container" ref="cateCantainer">
                 <template v-for="(item, index) in category" :key="`content-${item.name}`">
                     <div class="category-content" v-show="index == activeInex">
                         {{ item.name }}

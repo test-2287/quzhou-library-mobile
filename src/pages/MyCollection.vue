@@ -1,11 +1,20 @@
 <script setup>
 import BookCard from '@/components/BookCard.vue';
+import { ref } from 'vue';
 
 const bookProps = {
     title: '哲学，为人生烦恼找答案',
     author: '[美] 菲利普·朱迪狄欧 著',
     publisher: '北京联合出版公司'
 }
+
+const listModel = ref(false)
+const checkAll = ref([])
+const collectionList  = ref(null)
+const toggleAll = () => {
+    collectionList.value.toggleAll(listModel.value);
+}
+
 </script>
 
 <template>
@@ -13,16 +22,19 @@ const bookProps = {
         <div class="page-header">我的收藏(12)</div>
         <div class="page-content">
 
-            <div class="book-item" v-for="index in 2">
-                <van-checkbox />
-                <BookCard v-bind="bookProps"/>
-            </div>
+            <van-checkbox-group v-model="checkAll" ref="collectionList">
+                <div class="book-item select"  v-for="index in 2">
+                    <van-checkbox :name="`book${index}`"/>
+                    <BookCard v-bind="bookProps" />
+                </div>
+            </van-checkbox-group>
+
 
         </div>
 
         <div class="bottom-bar space-between-box">
             <div class="checkall-box">
-                <van-checkbox></van-checkbox>
+                <van-checkbox v-model="listModel" @change="toggleAll"></van-checkbox>
                 <span>全选</span>
             </div>
             <div class="submit-box">
@@ -56,6 +68,9 @@ const bookProps = {
         padding-left: 12px;
         margin-top: 12px;
         overflow: hidden;
+        &.select {
+            border: 1px solid #67A3FE;
+        }
 
         .book-card {
             flex: 1;
@@ -97,11 +112,13 @@ const bookProps = {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+
                 &.submit {
                     background-color: var(--main-color-blue);
                     color: #fff;
                     margin-left: 12px;
                 }
+
                 &.cancel {
                     border: 1px solid var(--stroke-color1);
                     color: var(--text-color1);

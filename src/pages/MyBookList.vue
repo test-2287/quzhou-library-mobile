@@ -35,21 +35,25 @@ const bookProps = {
                     <van-checkbox-group v-model="checked" ref="checkboxGroup">
                         <div class="booklist-item">
                             <van-checkbox name="a" />
-                            <BookCard v-bind="bookProps"/>
+                            <BookCard v-bind="bookProps" />
                         </div>
                         <div class="booklist-item">
                             <van-checkbox name="b" />
-                            <BookCard v-bind="bookProps"/>
+                            <BookCard v-bind="bookProps" />
                         </div>
                     </van-checkbox-group>
-                        <div class="booklist-action-box">
-                            <van-checkbox v-model="listModel" @change="toggleAll"/>
-                            <div class="button-box">
-                                <div class="button delete">删除</div>
-                                <div class="button submit" @click="submit">提交订单</div>
-                            </div>
+                    <div class="booklist-action-box space-between">
+                        <span class="align-center">
+                            <van-checkbox v-model="listModel" @change="toggleAll" />
+                            <span class="check-all-text">全选</span>
+                        </span>
+
+                        <div class="button-box">
+                            <div class="button delete">删除</div>
+                            <div class="button submit" @click="submit">提交订单</div>
                         </div>
-                    
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -98,8 +102,13 @@ const bookProps = {
         .booklist-action-box {
             border-top: 1px solid #E6EFF8;
             padding: 9px 12px;
-            display: flex;
-            justify-content: space-between;
+
+            .check-all-text {
+                font-size: var(--font-size12);
+                line-height: var(--line-height18);
+                color: var(--text-color1);
+                margin-left: 10px;
+            }
 
             .button-box {
                 display: flex;
@@ -132,4 +141,5 @@ const bookProps = {
         }
 
     }
-}</style>
+}
+</style>

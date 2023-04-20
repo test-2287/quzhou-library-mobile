@@ -44,7 +44,7 @@ const routes = [
     {
         path: '/book-category',
         component: () => import('@/pages/BookCategory.vue'),
-        
+
     },
     {
         path: '/book-detail',
@@ -140,6 +140,11 @@ const routes = [
 const router = createRouter({
     history: createWebHistory(),
     routes
+})
+
+router.afterEach((to, from, next) => {
+    window.scrollTo(0, 0)
+    // next()
 })
 
 export default router

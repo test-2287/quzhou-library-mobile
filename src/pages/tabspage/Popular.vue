@@ -12,19 +12,19 @@ const bookProps = {
 <template>
     <div class="popular-page">
         <div class="book-item">
-            <BookCard v-bind="bookProps"/>
+            <BookCard v-bind="bookProps" />
         </div>
         <div class="book-item">
-            <BookCard v-bind="bookProps"/>
+            <BookCard v-bind="bookProps" />
         </div>
         <div class="book-item">
-            <BookCard v-bind="bookProps"/>
+            <BookCard v-bind="bookProps" />
         </div>
         <div class="book-item">
-            <BookCard v-bind="bookProps"/>
+            <BookCard v-bind="bookProps" />
         </div>
         <div class="book-item">
-            <BookCard v-bind="bookProps"/>
+            <BookCard v-bind="bookProps" />
         </div>
     </div>
 </template>
@@ -32,8 +32,23 @@ const bookProps = {
 <style scoped lang="scss">
 .popular-page {
     padding: 16px;
-    .book-item:not(:first-child) {
-        margin-top: 1px;
+
+    .book-item {
+        &:not(:first-child) {
+            margin-top: 1px;
+        }
+
+        &:first-child {
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            overflow: hidden;
+        }
+        &:last-child {
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            overflow: hidden;
+        }
     }
+
 }
 </style>

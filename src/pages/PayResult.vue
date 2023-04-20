@@ -35,13 +35,36 @@ import SvgIcon from '@/components/SvgIcon.vue'
     align-items: center;
     justify-content: center;
     background-color: var(--main-color-blue);
+    overflow: hidden;
+    &::before {
+        content: '';
+        position: absolute;
+        width: 129vw;
+        height: 129vw;
+        border-radius: 50%;
+        background: linear-gradient(176.21deg, #2C79EE 7.92%, rgba(44, 121, 238, 0) 96.89%);
+        left: 38vw;
+        top: -60.5vw;
+    }
+    &::after {
+        content: '';
+        position: absolute;
+        width: 129vw;
+        height: 129vw;
+        border-radius: 50%;
+        background: linear-gradient(146.6deg, #0851BE 7.01%, rgba(8, 81, 190, 0) 71.1%);;
+        right: 43.47vw;
+        bottom: -80.27vw;
+    }
 
     .result-box {
+        position: relative;
+        z-index: 2;
         padding: 20px;
         padding-top: 30px;
         background-color: #fff;
         border-radius: 8px;
-        width: 319px;
+        width: calc(100vw - 28px * 2);
         display: flex;
         flex-direction: column;
         align-items: center;

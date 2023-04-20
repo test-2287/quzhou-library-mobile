@@ -8,14 +8,14 @@ import BgImage from '@/assets/lib-recommend-bg.svg'
         <div class="list-title">图书馆推荐书单</div>
         <div class="recommend-list">
 
-            <div class="list-item" v-for="index in 6">
+            <router-link to="/lib-recommend-detail" class="list-item" v-for="index in 6">
                 <div class="list-image" :style="{'background-image': `url(${BgImage})`}">
                 </div>
                 <div class="list-info">
                     <div class="list-name">唐宋诗词鉴赏系列</div>
                     <div class="list-desc">中华文化的博大精深</div>
                 </div>
-            </div>
+            </router-link>
 
         </div>
     </div>

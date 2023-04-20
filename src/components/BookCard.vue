@@ -39,7 +39,7 @@ const props = defineProps({
 </script>
 
 <template>
-    <div class="book-card">
+    <router-link to="/book-detail" class="book-card">
         <i class="icon-rank" v-if="showRank"
             :style="{ backgroundImage: `url(${Number(rank) <= 3 ? IconRankOrange : IconRankBlue})` }">{{ rank }}</i>
         <div class="book-cover">
@@ -62,7 +62,7 @@ const props = defineProps({
                 </template>
             </div>
         </div>
-    </div>
+    </router-link>
 </template>
 
 <style scoped lang="scss">

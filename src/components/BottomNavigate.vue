@@ -58,6 +58,7 @@ const navigateList = [
     justify-content: space-around;
     align-items: center;
     z-index: 100;
+    padding-bottom: max(20px, env(safe-area-inset-top));
 
     .navigate-item {
         display: flex;

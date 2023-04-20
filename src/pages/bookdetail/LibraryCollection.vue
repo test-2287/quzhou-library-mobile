@@ -1,5 +1,9 @@
 <script setup>
 import LibCollectDropbox from '@/pages/bookdetail/LibCollectDropbox.vue';
+import { ref } from 'vue';
+
+const inLibCheck = ref(false)
+
 </script>
 
 <template>
@@ -8,7 +12,7 @@ import LibCollectDropbox from '@/pages/bookdetail/LibCollectDropbox.vue';
         <div class="collect-header">
             <div class="section-title">馆藏图书列表</div>
             <div class="filter">
-                <van-checkbox shape="square" />
+                <van-checkbox shape="square" v-model="inLibCheck"/>
                 <span>只显示在馆</span>
             </div>
         </div>
