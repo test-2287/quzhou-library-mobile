@@ -1,36 +1,48 @@
 <script setup>
 import SvgIcon from '@/components/SvgIcon.vue';
+import { ref, reactive } from 'vue';
+
+const listData = reactive([
+    {
+        type: '普通图书',
+        barcodeNum: '46246164',
+        searchNum: 'B648/143218',
+        inLib: true
+    },
+    {
+        type: '普通图书',
+        barcodeNum: '46246164',
+        searchNum: 'B648/143218',
+        inLib: false
+    }
+])
+
+const listShow = ref(true)
+const toggleLocationList = () => {
+    listShow.value = !listShow.value
+}
+
 </script>
 
 <template>
     <div class="book_location-list">
         <div class="list-header">
-            <SvgIcon name="dropbox-lib-title" class="icon" />
-            馆藏地点
+            <span class="center" @click="toggleLocationList">
+                <SvgIcon name="dropbox-lib-title" class="icon" :class="{'collapse': !listShow}"/>
+                馆藏地点
+            </span>
         </div>
-        <div class="list-content">
-            <div class="list_content-item">
+        <div class="list-content" v-show="listShow">
+            <div class="list_content-item" v-for="item in listData">
                 <div class="list_content-item-left">
                     <div class="label">类型</div>
-                    <div class="content">普通图书</div>
+                    <div class="content">{{ item.type }}</div>
                     <div class="label">条码号</div>
-                    <div class="content">46246164</div>
+                    <div class="content">{{ item.barcodeNum }}</div>
                     <div class="label">索书号</div>
-                    <div class="content">B648/143218</div>
+                    <div class="content">{{  item.searchNum }}</div>
                 </div>
-                <div class="list_content-item-right available">在馆</div>
-            </div>
-
-            <div class="list_content-item">
-                <div class="list_content-item-left">
-                    <div class="label">类型</div>
-                    <div class="content">普通图书</div>
-                    <div class="label">条码号</div>
-                    <div class="content">46246164</div>
-                    <div class="label">索书号</div>
-                    <div class="content">B648/143218</div>
-                </div>
-                <div class="list_content-item-right unavailable">借出</div>
+                <div class="list_content-item-right" :class="{'available': item.inLib, 'unavailable': !item.inLib}">{{ item.inLib ? '在馆' : '借出' }}</div>
             </div>
         </div>
     </div>
@@ -46,10 +58,14 @@ import SvgIcon from '@/components/SvgIcon.vue';
         line-height: var(--main-line-height1);
         font-weight: 500;
         color: var(--text-color4);
+
         .icon {
             width: 7px;
             height: 12px;
             margin-right: 8px;
+            &.collapse {
+                transform: rotate(90deg)
+            }
         }
     }
 
@@ -84,9 +100,11 @@ import SvgIcon from '@/components/SvgIcon.vue';
                 color: #fff;
                 padding: 3px 6px;
                 border-radius: 4px;
+
                 &.available {
                     background: linear-gradient(104.04deg, #88C6FF 0%, #1074EA 100%);
                 }
+
                 &.unavailable {
                     background: linear-gradient(284.04deg, #ED7F1A 0%, #FEC24C 100%), #FF9330;
                 }

@@ -540,7 +540,7 @@ const bookProps2 = {
         font-size: var(--main-font-size1);
         line-height: var(--main-line-height1);
         color: var(--main-color-blue-dark);
-        max-height: 36px;
+        max-height: calc(var(--main-line-height1) * 2);
         overflow: hidden;
         text-overflow: ellipsis;
         -webkit-line-clamp: 2;
@@ -590,7 +590,7 @@ const bookProps2 = {
         }
 
         .book-intro {
-            max-height: 36px;
+            max-height: calc(var(--main-line-height1) * 2);
             overflow: hidden;
             text-overflow: ellipsis;
             -webkit-line-clamp: 2;
@@ -688,7 +688,7 @@ const bookProps2 = {
                 line-height: var(--main-line-height1);
                 margin-bottom: 8px;
                 white-space: normal;
-                max-height: 34px;
+                max-height: calc(var(--main-line-height1) * 2);
                 overflow: hidden;
                 text-overflow: ellipsis;
                 -webkit-line-clamp: 2;
@@ -735,6 +735,7 @@ const bookProps2 = {
                 font-size: var(--main-font-size1);
                 line-height: var(--main-line-height1);
                 margin-bottom: 6px;
+                max-width: calc(100vw - 32px * 2 - 8px - 34px - var(--book-cover-container-width1) - 16px);
             }
 
             :deep(.book-author) {

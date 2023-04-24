@@ -10,7 +10,7 @@ const bookProps = {
 
 const listModel = ref(false)
 const checkAll = ref([])
-const collectionList  = ref(null)
+const collectionList = ref(null)
 const toggleAll = () => {
     collectionList.value.toggleAll(listModel.value);
 }
@@ -23,8 +23,8 @@ const toggleAll = () => {
         <div class="page-content">
 
             <van-checkbox-group v-model="checkAll" ref="collectionList">
-                <div class="book-item select"  v-for="index in 2">
-                    <van-checkbox :name="`book${index}`"/>
+                <div class="book-item select" v-for="index in 2">
+                    <van-checkbox :name="`book${index}`" />
                     <BookCard v-bind="bookProps" />
                 </div>
             </van-checkbox-group>
@@ -68,13 +68,22 @@ const toggleAll = () => {
         padding-left: 12px;
         margin-top: 12px;
         overflow: hidden;
+
         &.select {
             border: 1px solid #67A3FE;
+        }
+
+        .van-checkbox {
+            flex-shrink: 0;
         }
 
         .book-card {
             flex: 1;
             padding: 16px 20px;
+        }
+
+        :deep(.book-card .book-title) {
+            max-width: calc(100vw - 32px - 14px - 20px - 40px - var(--book-cover-container-width1) - 16px);
         }
     }
 

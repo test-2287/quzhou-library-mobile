@@ -258,13 +258,15 @@ const router = useRouter()
     }
 
     .logout {
-        background-color: #fff;
+        /* background-color: #fff; */
+        background-color: var(--main-color-blue);
         box-shadow: 0px 8px 8px rgba(136, 183, 252, 0.06);
         border-radius: 8px;
         padding: 12px 16px;
         font-size: 14px;
         line-height: 20px;
-        color: var(--text-color6);
+        /* color: var(--text-color6); */
+        color: #fff;
         text-align: center;
         font-weight: bold;
     }

@@ -143,8 +143,10 @@ const checkOrderDetail = () => {
 
         .order-status {
             .status-box {
-                font-size: var(--main-font-size2);
-                line-height: var(--main-line-height2);
+                /* font-size: var(--main-font-size2);
+                line-height: var(--main-line-height2); */
+                font-size: 14px;
+                line-height: 20px;
                 padding: 6px 10px;
                 border-radius: 4px;
 
@@ -223,8 +225,10 @@ const checkOrderDetail = () => {
             }
 
             .button {
-                font-size: var(--main-font-size2);
-                line-height: var(--main-line-height2);
+                /* font-size: var(--main-font-size2);
+                line-height: var(--main-line-height2); */
+                font-size: 14px;
+                line-height: 20px;
                 padding: 8px 22px;
                 border-radius: 18px;
                 margin-left: 16px;

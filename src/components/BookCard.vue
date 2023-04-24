@@ -109,7 +109,6 @@ const props = defineProps({
         flex-direction: column;
 
         .book-title {
-            font-size: 16px;
             font-size: var(--main-font-size2);
             list-style: var(--main-line-height2);
             font-weight: 700;
@@ -148,9 +147,11 @@ const props = defineProps({
                 font-size: 10px;
                 line-height: 14px;
                 color: #fff;
+
                 &.lib {
                     background: linear-gradient(135deg, #9CB8FF 0%, #1264E0 100%);
                 }
+
                 &.store {
                     background: linear-gradient(135deg, #FFBA7B 0%, #E41B1B 100%);
                 }

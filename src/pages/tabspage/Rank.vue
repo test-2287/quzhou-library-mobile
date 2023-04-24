@@ -31,9 +31,9 @@ const bookProps = {
                     buttonFontSize: 'var(--main-font-size2)',
                     buttonLineHeight: 'var(--main-line-height2)'
                 }">
-                    <van-button size="small" v-for="(item, index) in filterList" :key="index" 
-                    :type="activeFilter === index ? 'primary' : 'default'" 
-                    @click="activeFilter = index">{{ item }}</van-button>
+                    <van-button size="small" v-for="(item, index) in filterList" :key="index"
+                        :type="activeFilter === index ? 'primary' : 'default'" @click="activeFilter = index">{{ item
+                        }}</van-button>
                 </van-config-provider>
             </div>
 
@@ -41,7 +41,7 @@ const bookProps = {
 
         <div class="rank-list">
             <div class="list-item" v-for="index in 10">
-                <BookCard v-bind="bookProps" :rank="index"/>
+                <BookCard v-bind="bookProps" :rank="index" />
             </div>
         </div>
     </div>
@@ -90,6 +90,11 @@ const bookProps = {
             &:not(:last-child) {
                 margin-bottom: 10px;
             }
+
+            :deep(.book-card .book-title) {
+                max-width: calc(100vw - 32px - 30px - var(--book-cover-container-width1) - 16px);
+            }
+
         }
 
     }

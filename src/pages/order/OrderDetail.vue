@@ -261,6 +261,10 @@ const checkDelivery = () => {
                 color: var(--text-color2);
             }
         }
+
+        :deep(.book-card .book-title) {
+            max-width: calc(100vw - 32px * 2 - 30px - var(--book-cover-container-width1) - 16px);
+        }
     }
 
     .order-info {
@@ -306,6 +310,8 @@ const checkDelivery = () => {
                     margin-right: 6px;
                 }
             }
+
+
         }
 
     }
@@ -392,6 +398,7 @@ const checkDelivery = () => {
             border: 1px solid var(--stroke-color1);
             font-size: var(--font-size14);
             line-height: var(--line-height20);
+
             &:not(:last-child) {
                 margin-bottom: 16px;
             }

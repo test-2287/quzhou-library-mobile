@@ -92,10 +92,15 @@ const bookProps = {
             display: flex;
             align-items: center;
             padding-left: 12px;
-
+            .van-checkbox {
+                flex-shrink: 0;
+            }
             .book-card {
                 flex: 1;
                 padding: 16px 20px;
+            }
+            :deep(.book-card .book-title) {
+                max-width: calc(100vw - 32px - 12px - 20px - 40px - var(--book-cover-container-width1) - 16px);
             }
         }
 

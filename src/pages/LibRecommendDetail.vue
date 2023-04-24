@@ -18,13 +18,14 @@ const bookProps = {
         <div class="theme-intro">
             <div class="theme-title">一路向西 丝绸之路</div>
             <div class="theme-subtitle">中华文化的博大精深</div>
-            <div class="theme-desc">中国的丝绸、瓷器、陶器、茶叶等大量珍贵产品和科学文化，除通过横贯大陆的陆上交通线路大量输往中亚、西亚和非洲、欧洲之外，也通过海上源源不断地销往东亚、大洋洲、美洲和世界各地。</div>
+            <div class="theme-desc">中国的丝绸、瓷器、陶器、茶叶等大量珍贵产品和科学文化，除通过横贯大陆的陆上交通线路大量输往中亚、西亚和非洲、欧洲之外，也通过海上源源不断地销往东亚、大洋洲、美洲和世界各地。
+            </div>
         </div>
         <div class="recommend-section">
             <div class="recommend-label">推荐书单(12)</div>
             <div class="recommend-list">
                 <div class="recommend-item" v-for="index in 5">
-                    <BookCard v-bind="bookProps"/>
+                    <BookCard v-bind="bookProps" />
                 </div>
             </div>
         </div>
@@ -77,6 +78,10 @@ const bookProps = {
 
             .recommend-item:not(:first-child) {
                 margin-top: 1px;
+            }
+
+            :deep(.book-card .book-title) {
+                max-width: calc(100vw - 32px * 2 - var(--book-cover-container-width1) - 16px);
             }
         }
     }

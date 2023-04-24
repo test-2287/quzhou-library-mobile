@@ -30,7 +30,7 @@ const renewSuccessDialog = ref(false)
 
 const listModel = ref(false)
 const checkAll = ref([])
-const borrowList  = ref(null)
+const borrowList = ref(null)
 const toggleAll = () => {
     borrowList.value.toggleAll(listModel.value);
 }
@@ -51,7 +51,7 @@ const toggleAll = () => {
                     <div class="borrow-item  select" v-for="index in 2">
                         <van-checkbox :name="`book${index}`" />
                         <div class="item-right">
-                            <BookCard v-bind="bookProps"/>
+                            <BookCard v-bind="bookProps" />
                             <div class="borrow-info-box">
                                 <div class="borrow-info-left">
                                     <div class="info-item">
@@ -82,7 +82,7 @@ const toggleAll = () => {
 
         <div class="bottom-bar space-between-box">
             <div class="checkall-box">
-                <van-checkbox  v-model="listModel" @change="toggleAll"></van-checkbox>
+                <van-checkbox v-model="listModel" @change="toggleAll"></van-checkbox>
                 <span>全选</span>
             </div>
             <div class="submit-box">
@@ -124,7 +124,7 @@ const toggleAll = () => {
 
         <van-dialog v-model:show="renewSuccessDialog" width="180" :closeOnClickOverlay="true">
             <div class="renew-dialog">
-                <SvgIcon name="renew-success" class="icon"/>
+                <SvgIcon name="renew-success" class="icon" />
                 <div class="success-text">已续借成功</div>
             </div>
             <template #footer />
@@ -134,7 +134,7 @@ const toggleAll = () => {
     </div>
 </template>
 
-<style scope lang="scss">
+<style scoped lang="scss">
 .my-borrow-page {
     padding: 16px;
     padding-bottom: 90px;
@@ -172,8 +172,16 @@ const toggleAll = () => {
         display: flex;
         align-items: center;
 
+        .van-checkbox {
+            flex-shrink: 0;
+        }
+
         .item-right {
             flex: 1;
+
+            :deep(.book-card .book-title) {
+                max-width: calc(100vw - 32px - 14px - 20px - 30px - var(--book-cover-container-width1) - 16px);
+            }
 
             .borrow-info-box {
                 display: flex;
@@ -267,25 +275,30 @@ const toggleAll = () => {
 
     .dialog-content {
         padding: 16px;
+
         .book-item {
             padding: 12px;
             padding-bottom: 16px;
             border: 1px solid #E7E7E7;
             border-radius: 6px;
+
             &:not(:first-child) {
                 margin-top: 12px;
             }
+
             .book-title {
                 font-size: var(--font-size12);
                 line-height: var(--line-height18);
                 margin-bottom: 6px;
             }
+
             .book-author {
                 font-size: var(--font-size12);
                 line-height: var(--line-height18);
                 color: var(--text-color1);
             }
         }
+
         .item-right {
             display: flex;
             flex-direction: column;
@@ -331,12 +344,14 @@ const toggleAll = () => {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .icon {
             width: 50px;
             height: 50px;
             color: var(--main-color-green);
             margin-bottom: 16px;
         }
+
         .success-text {
             font-size: var(--font-size18);
             line-height: var(--line-height26);
@@ -344,4 +359,5 @@ const toggleAll = () => {
 
         }
     }
-}</style>
+}
+</style>

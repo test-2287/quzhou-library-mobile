@@ -55,9 +55,9 @@ const paymentMethod = ref('');
                 <span class="right-text">共1件</span>
             </div>
             <div class="books-info-content" :class="collapse ? 'collapse' : ''">
-                <BookCard v-bind="bookProps" />
-                <BookCard v-bind="bookProps" />
-                <BookCard v-bind="bookProps" />
+                <template v-for="index in 3">
+                    <BookCard v-bind="bookProps" v-show="(index <= 2) || (index > 2 && !collapse)" />
+                </template>
 
 
                 <div class="toggle-box" @click="toggleCollapse">
@@ -102,7 +102,7 @@ const paymentMethod = ref('');
                         <span>微信支付</span>
                     </div>
                     <div class="box-right">
-                        <van-radio name="wechat"/>
+                        <van-radio name="wechat" />
                     </div>
                 </div>
                 <div class="space-between-box payment-option alipay">
@@ -111,7 +111,7 @@ const paymentMethod = ref('');
                         <span>支付宝支付</span>
                     </div>
                     <div class="box-right">
-                        <van-radio name="alipay"/>
+                        <van-radio name="alipay" />
                     </div>
                 </div>
             </van-radio-group>
@@ -266,7 +266,6 @@ const paymentMethod = ref('');
             position: relative;
 
             &.collapse {
-                max-height: 270px;
                 overflow: hidden;
             }
 
@@ -284,8 +283,10 @@ const paymentMethod = ref('');
                 }
 
                 span {
-                    font-size: var(--main-font-size1);
-                    line-height: var(--main-line-height1);
+                    /* font-size: var(--main-font-size1);
+                    line-height: var(--main-line-height1); */
+                    font-size: 12px;
+                    line-height: 18px;
                     color: var(--text-color-link);
                 }
 
@@ -295,6 +296,10 @@ const paymentMethod = ref('');
                     margin-left: 3px;
                     color: var(--text-color2);
                 }
+            }
+
+            :deep(.book-card .book-title) {
+                max-width: calc(100vw - 32px * 2 - 30px - var(--book-cover-container-width1) - 16px);
             }
 
         }

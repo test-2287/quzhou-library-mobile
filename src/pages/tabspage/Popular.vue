@@ -48,6 +48,10 @@ const bookProps = {
             border-bottom-right-radius: 8px;
             overflow: hidden;
         }
+
+        :deep(.book-card .book-title) {
+            max-width: calc(100vw - 32px - 30px - var(--book-cover-container-width1) - 16px);
+        }
     }
 
 }
