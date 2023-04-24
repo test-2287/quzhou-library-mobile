@@ -152,8 +152,10 @@ const router = useRouter()
 
         .name {
             font-weight: 700;
-            font-size: 16px;
-            line-height: 23px;
+            /* font-size: 16px;
+            line-height: 23px; */
+            font-size: var(--main-font-size3);
+            line-height: var(--main-line-height3);
             color: #FFFFFF;
             margin-bottom: 2px;
         }
@@ -161,6 +163,8 @@ const router = useRouter()
         .lib {
             font-size: 12px;
             line-height: 17px;
+            font-size: var(--main-font-size1);
+            line-height: var(--main-line-height1);
             color: rgba(255, 255, 255, 0.5);
         }
     }
@@ -190,8 +194,10 @@ const router = useRouter()
             }
 
             .label {
-                font-size: 12px;
-                line-height: 17px;
+                /* font-size: 12px;
+                line-height: 17px; */
+                font-size: var(--main-font-size1);
+                line-height: var(--main-line-height1);
                 color: var(--text-color4);
             }
 
@@ -206,8 +212,8 @@ const router = useRouter()
         background: linear-gradient(91.63deg, rgba(0, 0, 0, 0.1) 4.94%, rgba(0, 0, 0, 0) 81.61%), #4CCC41;
         border-radius: 8px;
         padding: 10px 16px;
-        font-size: 13px;
-        line-height: 19px;
+        font-size: calc(var(--main-font-size1));
+        line-height: calc(var(--main-line-height1));
         color: #FFFFFF;
         align-items: center;
         font-weight: 500;
@@ -247,8 +253,8 @@ const router = useRouter()
             span {
                 margin-left: 16px;
                 font-weight: 500;
-                font-size: 13px;
-                line-height: 19px;
+                font-size: calc(var(--main-font-size1) + 1px);
+                line-height: calc(var(--main-line-height1) + 1px);
             }
 
             &:last-child {
@@ -263,8 +269,8 @@ const router = useRouter()
         box-shadow: 0px 8px 8px rgba(136, 183, 252, 0.06);
         border-radius: 8px;
         padding: 12px 16px;
-        font-size: 14px;
-        line-height: 20px;
+        font-size: var(--main-font-size2);
+        line-height: var(--main-line-height2);
         /* color: var(--text-color6); */
         color: #fff;
         text-align: center;

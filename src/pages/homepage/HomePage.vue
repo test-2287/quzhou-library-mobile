@@ -394,8 +394,8 @@ const toggleElderVersion = () => {
     align-items: center;
     background-color: #fff;
     border-radius: 8px;
-    justify-content: center;
-    align-content: center;
+    justify-items: center;
+    align-items: start;
 
     >a {
         display: flex;

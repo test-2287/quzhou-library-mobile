@@ -43,6 +43,12 @@
     --font-size22: 22px;
     --line-height28: 28px;
 
+    --font-size24: 24px;
+    --line-height30: 30px;
+
+    --font-size26: 26px;
+    --line-height32: 32px;
+
     --book-cover-container-width1: 60px;
     --book-cover-container-height1: 84px;
     --book-cover-container-width2: 80px;
@@ -63,6 +69,8 @@
     --main-line-height3: var(--line-height22);
     --main-font-size4: var(--font-size18);
     --main-line-height4: var(--line-height24);
+    --main-font-size5: var(--font-size20);
+    --main-line-height5: var(--line-height26);
 
     --homepage-nav-font-size: var(--font-size12);
     --homepage-nav-line-height: var(--line-height18);
@@ -71,11 +79,15 @@
 body.theme-elder {
     --main-font-size1: var(--font-size16);
     --main-line-height1: var(--line-height22);
-    --main-font-size2: var(--font-size20);
-    --main-line-height2: var(--line-height26);
-    --main-font-size3: var(--font-size22);
-    --main-line-height3: var(--line-height28);
+    --main-font-size2: var(--font-size18);
+    --main-line-height2: var(--line-height24);
+    --main-font-size3: var(--font-size20);
+    --main-line-height3: var(--line-height26);
+    --main-font-size4: var(--font-size22);
+    --main-line-height4: var(--line-height28);
+    --main-font-size5: var(--font-size24);
+    --main-line-height5: var(--line-height30);
 
-    --homepage-nav-font-size: var(--font-size14);
-    --homepage-nav-line-height: var(--line-height20);
+    --homepage-nav-font-size: 13px;
+    --homepage-nav-line-height: 19px;
 }

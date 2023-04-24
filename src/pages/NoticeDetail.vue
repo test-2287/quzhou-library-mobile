@@ -44,24 +44,24 @@ const router = useRouter()
 
         .title {
             font-weight: 700;
-            font-size: 20px;
+            font-size: var(--main-font-size5);
             line-height: 29px;
             color: var(--text-color4);
             margin-bottom: 6px;
         }
 
         .date {
-            font-size: 12px;
+            font-size: var(--main-font-size1);
             line-height: 24px;
             color: var(--text-color1);
             margin-bottom: 12px;
         }
 
         .content {
-            font-size: 14px;
+            font-size: var(--main-font-size2);
             line-height: 24px;
             color: var(--text-color3);
-            height: calc(100vh - 190px);
+            height: calc(100vh - 32px * 2 - 64px - 36px - 58px - 10px);
             overflow: scroll;
         }
 

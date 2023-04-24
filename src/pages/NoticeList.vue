@@ -22,8 +22,8 @@ const router = useRouter()
     padding: 16px;
 
     .page-title {
-        font-size: 18px;
-        line-height: 26px;
+        font-size: var(--main-line-height4);
+        line-height: var(--main-line-height4);
         font-weight: bold;
         color: var(--text-color4);
         margin-bottom: 16px;
@@ -37,21 +37,21 @@ const router = useRouter()
         margin-bottom: 16px;
 
         .notice-title {
-            font-size: 14px;
-            line-height: 20px;
+            font-size: var(--main-font-size2);
+            line-height: var(--main-line-height2);
             color: var(--text-color4);
             margin-bottom: 4px;
         }
 
         .notice-date {
-            font-size: 12px;
+            font-size: var(--main-font-size1);
             line-height: 24px;
             color: var(--text-color1);
             margin-bottom: 12px;
         }
 
         .notice-summary {
-            font-size: 12px;
+            font-size: var(--main-font-size1);
             line-height: 20px;
             color: var(--text-color1);
         }
