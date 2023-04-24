@@ -51,7 +51,7 @@ const toggleElderVersion = () => {
                         <div class="banner-subtitle">阅读是一种感悟人生的艺术</div>
                     </div>
 
-                    <div class="elder-button" @click="toggleElderVersion">长辈版</div>
+                    <div class="elder-button" @click="toggleElderVersion">{{ isElderVersion ? '常规版' : '长辈版'}}</div>
                 </div>
 
                 <div class="homepage-search">
@@ -64,28 +64,36 @@ const toggleElderVersion = () => {
             <div class="homepage-navigation">
                 <router-link to="/highlights/popular">
                     <SvgIcon name="homepage-nav-popular" class="icon" />
+                    <span>热门图书</span>
                 </router-link>
                 <router-link to="/highlights/rank">
                     <SvgIcon name="homepage-nav-rank" class="icon" />
+                    <span>借阅排行榜</span>
                 </router-link>
                 <router-link to="/ecard">
                     <!-- <SvgIcon name="homepage-nav-ecard" class="icon" /> -->
                     <img :src="EcardSvgIcon" alt="" class="icon">
+                    <span>电子读者证</span>
                 </router-link>
                 <router-link to="/my-borrow">
                     <SvgIcon name="homepage-nav-renewal" class="icon" />
+                    <span>图书续借</span>
                 </router-link>
                 <router-link to="/feedback">
                     <SvgIcon name="homepage-nav-comment" class="icon" />
+                    <span>读者留言</span>
                 </router-link>
                 <router-link to="/order-list">
                     <SvgIcon name="homepage-nav-myorder" class="icon" />
+                    <span>我的订单</span>
                 </router-link>
                 <router-link to="/ecard-register">
                     <SvgIcon name="homepage-nav-online_register" class="icon" />
+                    <span>网上办证</span>
                 </router-link>
                 <router-link to="/my-collection">
                     <SvgIcon name="homepage-nav-favourites" class="icon" />
+                    <span>我的收藏</span>
                 </router-link>
             </div>
 
@@ -166,8 +174,8 @@ const toggleElderVersion = () => {
                                 <div class="book-title">万叶集</div>
                                 <div class="book-author">孙甘露 著 / 上海文艺出版社</div>
                                 <div class="book-intro">本书是日本恒远悠久的和歌选集，被誉为“日本的《诗经》”。作者身份自天皇、文人武将、平民至无名无姓者，和歌内容自山河国土至细腻情爱
-                                </div>
                             </div>
+                        </div>
                         </div>
                     </router-link>
                 </div>
@@ -188,8 +196,8 @@ const toggleElderVersion = () => {
                             </div>
                         </router-link>
                     </div>
-                    <router-link to="/book-category?cateid=1">
-                        <div class="check-all">查看所有</div>
+                <router-link to="/book-category?cateid=1">
+                    <div class="check-all">查看所有</div>
                     </router-link>
                 </div>
             </div>
@@ -201,12 +209,12 @@ const toggleElderVersion = () => {
                 <div class="section-content">
                     <div class="books grid col2">
                         <!-- <router-link to="/book-detail" v-for="index in 6">
-                            <BookCard v-bind="bookProps2" v-for="index in 6" />
-                        </router-link> -->
+                                <BookCard v-bind="bookProps2" v-for="index in 6" />
+                            </router-link> -->
                         <BookCard v-bind="bookProps2" v-for="index in 6" />
                     </div>
-                    <router-link to="/book-category?cateid=2">
-                        <div class="check-all">查看所有</div>
+                <router-link to="/book-category?cateid=2">
+                    <div class="check-all">查看所有</div>
                     </router-link>
                 </div>
             </div>
@@ -223,8 +231,8 @@ const toggleElderVersion = () => {
                 <div class="section-content">
                     <div class="books rank">
                         <!-- <router-link to="/book-detail" v-for="index in 5">
-                            <BookCard v-bind="bookProps" :showRank="true" :rank="index" />
-                        </router-link> -->
+                                <BookCard v-bind="bookProps" :showRank="true" :rank="index" />
+                            </router-link> -->
                         <BookCard v-bind="bookProps" :showRank="true" :rank="index" v-for="index in 5" />
                     </div>
                     <router-link to="/book-category?cateid=3">
@@ -240,9 +248,9 @@ const toggleElderVersion = () => {
                 <div class="section-content">
                     <div class="books grid col2">
                         <!-- <router-link to="/book-detail" v-for="index in 6">
-                            <BookCard v-bind="bookProps2" />
-                        </router-link> -->
-                        <BookCard v-bind="bookProps2" v-for="index in 6"/>
+                                <BookCard v-bind="bookProps2" />
+                            </router-link> -->
+                        <BookCard v-bind="bookProps2" v-for="index in 6" />
                     </div>
                     <router-link to="/book-category?cateid=4">
                         <div class="check-all">查看所有</div>
@@ -307,6 +315,7 @@ const toggleElderVersion = () => {
 
     .homepage-banner {
         position: relative;
+
         .elder-button {
             position: absolute;
             top: 26px;
@@ -319,6 +328,7 @@ const toggleElderVersion = () => {
             line-height: var(--main-line-height1);
         }
     }
+
     .banner-text {
         padding-top: 26px;
     }
@@ -384,12 +394,26 @@ const toggleElderVersion = () => {
     align-items: center;
     background-color: #fff;
     border-radius: 8px;
+    justify-content: center;
+    align-content: center;
 
-    >a,
-    .icon {
-        width: 68px;
-        height: 75px;
+    >a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .icon {
+            width: 56px;
+            height: 56px;
+            margin-bottom: 4px;
+        }
+        span {
+            font-size: var(--homepage-nav-font-size);
+            line-height: var(--homepage-nav-line-height);
+            color: var(--main-color-blue-dark);
+            font-weight: 500;
+        }
     }
+
 }
 
 .homepage-notification {

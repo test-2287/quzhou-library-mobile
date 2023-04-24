@@ -63,6 +63,9 @@
     --main-line-height3: var(--line-height22);
     --main-font-size4: var(--font-size18);
     --main-line-height4: var(--line-height24);
+
+    --homepage-nav-font-size: var(--font-size12);
+    --homepage-nav-line-height: var(--line-height18);
 }
 
 body.theme-elder {
@@ -72,4 +75,7 @@ body.theme-elder {
     --main-line-height2: var(--line-height26);
     --main-font-size3: var(--font-size22);
     --main-line-height3: var(--line-height28);
+
+    --homepage-nav-font-size: var(--font-size14);
+    --homepage-nav-line-height: var(--line-height20);
 }
