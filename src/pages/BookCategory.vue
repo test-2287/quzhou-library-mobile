@@ -94,7 +94,7 @@ const bookProps = {
 
 <template>
     <van-config-provider :theme-vars="{
-        sidebarWidth: `100px`,
+        sidebarWidth: `27vw`,
         sidebarFontSize: `var(--main-font-size2)`,
         sidebarLineHeight: `var(--main-line-height2)`,
         sidebarTextColor: `var(--text-color1)`,
@@ -139,13 +139,13 @@ const bookProps = {
     }
 
     .sidebar-container {
-        width: 100px;
+        width: 27vw;
         padding: 16px 0;
         background-color: var(--background-color1);
 
         :deep(.van-sidebar-item .van-sidebar-item__text) {
             white-space: nowrap;
-            width: calc(100px - 18px);
+            width: calc(27vw - 18px);
             overflow: hidden;
             text-overflow: ellipsis;
         }
@@ -154,6 +154,15 @@ const bookProps = {
 
     .category-container {
         flex: 1;
+
+        .category-content {
+            :deep(.book-card .book-title) {
+                max-width: calc(100vw - 27vw - 30px - var(--book-cover-container-width1) - 16px);
+            }
+
+        }
     }
+
+
 }
 </style>

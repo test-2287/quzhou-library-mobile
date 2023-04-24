@@ -419,7 +419,7 @@ const toggleElderVersion = () => {
 .homepage-notification {
     margin-top: 20px;
     padding: 11px 12px;
-    height: 44px;
+    /* height: 44px; */
     background-color: #fff;
     border-radius: 8px;
     display: flex;
@@ -431,8 +431,10 @@ const toggleElderVersion = () => {
         position: relative;
 
         span {
-            font-size: 16px;
-            line-height: 22px;
+            /* font-size: 16px;
+            line-height: 22px; */
+            font-size: var(--main-font-size3);
+            line-height: var(--main-line-height3);
             font-weight: bold;
             background: linear-gradient(125.27deg, #196ED2 19.43%, #86C5FF 85.36%);
             -webkit-background-clip: text;
@@ -457,8 +459,10 @@ const toggleElderVersion = () => {
     .notification-box {
         flex: 1;
         padding-left: 12px;
-        font-size: 14px;
-        line-height: 20px;
+        /* font-size: 14px;
+        line-height: 20px; */
+        font-size: var(--main-font-size2);
+        line-height: var(--main-line-height2);
         color: var(--main-color-blue-dark);
     }
 
