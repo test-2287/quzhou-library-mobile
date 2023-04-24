@@ -11,7 +11,7 @@ import ThemeItemBg from '@/assets/lib-recommend-detail-bg.svg';
 import { Swiper, SwiperSlide } from 'swiper/vue'
 import 'swiper/css';
 
-
+import { ref } from 'vue'
 
 const bookProps = {
     title: '哲学，为人生烦恼找答案',
@@ -23,6 +23,12 @@ const bookProps = {
 const bookProps2 = {
     title: '哲学，为人生烦恼找答案',
     author: '[美] 菲利普·朱迪狄欧 著'
+}
+
+const isElderVersion = ref(false)
+const toggleElderVersion = () => {
+    isElderVersion.value = !isElderVersion.value
+    document.body.classList.toggle('theme-elder')
 }
 
 </script>
@@ -44,6 +50,8 @@ const bookProps2 = {
                         <div class="banner-title">衢州市图书馆</div>
                         <div class="banner-subtitle">阅读是一种感悟人生的艺术</div>
                     </div>
+
+                    <div class="elder-button" @click="toggleElderVersion">长辈版</div>
                 </div>
 
                 <div class="homepage-search">
@@ -296,6 +304,21 @@ const bookProps2 = {
 }
 
 .homepage-header {
+
+    .homepage-banner {
+        position: relative;
+        .elder-button {
+            position: absolute;
+            top: 26px;
+            right: 0;
+            padding: 8px 10px;
+            border-radius: 8px;
+            background-color: rgba(80, 179, 254, 0.5);
+            color: #fff;
+            font-size: var(--main-font-size1);
+            line-height: var(--main-line-height1);
+        }
+    }
     .banner-text {
         padding-top: 26px;
     }
