@@ -199,8 +199,8 @@ input:focus {
       margin-bottom: 16px;
 
       label {
-          font-size: var(--font-size14);
-          line-height: var(--line-height20);
+          font-size: var(--main-font-size2);
+          line-height: var(--main-line-height2);
           color: var(--text-color4);
           margin-bottom: 10px;
       }
@@ -211,8 +211,8 @@ input:focus {
           border: 1px solid var(--stroke-color1);
           border-radius: 6px;
           padding: 0 10px;
-          font-size: var(--font-size14);
-          line-height: var(--line-height20);
+          font-size: var(--main-font-size2);
+          line-height: var(--main-line-height2);
 
           &::placeholder,
           &::-webkit-input-placeholder {
@@ -229,8 +229,8 @@ input:focus {
           border: 1px solid var(--stroke-color1);
           border-radius: 6px;
           padding: 0 10px;
-          font-size: var(--font-size14);
-          line-height: var(--line-height20);
+          font-size: var(--main-font-size2);
+          line-height: var(--main-line-height2);
           color: var(--text-color4);
 
           .icon {

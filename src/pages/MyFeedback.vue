@@ -42,8 +42,8 @@ const dialogShow = ref(false)
     padding: 16px;
 
     .page-title {
-        font-size: 18px;
-        line-height: 26px;
+        font-size: var(--main-font-size4);
+        line-height: var(--main-line-height4);
         font-weight: bold;
         color: var(--text-color4);
         margin-bottom: 16px;
@@ -62,15 +62,15 @@ const dialogShow = ref(false)
             margin-bottom: 10px;
 
             .title {
-                font-size: 14px;
-                line-height: 20px;
+                font-size: var(--main-font-size2);
+                line-height: var(--main-line-height2);
                 color: var(--text-color4);
                 margin-bottom: 6px;
             }
 
             .date {
-                font-size: 12px;
-                line-height: 18px;
+                font-size: var(--main-font-size1);
+                line-height: var(--main-line-height1);
                 color: var(--text-color2);
             }
         }
@@ -78,8 +78,8 @@ const dialogShow = ref(false)
         .content {
             padding-top: 10px;
             padding-bottom: 19px;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: var(--main-font-size2);
+            line-height: var(--main-line-height2);
             color: var(--text-color4);
             border-top: 1px solid var(--divider-color);
         }
@@ -87,8 +87,8 @@ const dialogShow = ref(false)
         .bottom {
             display: flex;
             justify-content: space-between;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: var(--main-font-size2);
+            line-height: var(--main-line-height2);
             color: var(--text-color1);
 
             .status {}
@@ -120,8 +120,8 @@ const dialogShow = ref(false)
     position: relative;
 
     .title {
-        font-size: 16px;
-        line-height: 24px;
+        font-size: var(--main-font-size3);
+        line-height: var(--main-line-height3);
         font-weight: bold;
         color: var(--text-color3);
         margin-bottom: 16px;
@@ -132,8 +132,8 @@ const dialogShow = ref(false)
         overflow: scroll;
         background: #fff;
         border-radius: 8px;
-        font-size: 12px;
-        line-height: 18px;
+        font-size: var(--main-font-size1);
+        line-height: var(--main-line-height1);
         color: var(--text-color4);
         width: 212px;
         max-height: 400px;

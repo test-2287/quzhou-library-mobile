@@ -138,7 +138,7 @@ const onSubmit = () => {
                 border: 1px solid var(--stroke-color1);
                 border-radius: 6px;
                 color: var(--text-color4);
-                font-size: 14px;
+                font-size: var(--main-font-size2);
                 line-height: 20px;
                 padding: 10px;
 

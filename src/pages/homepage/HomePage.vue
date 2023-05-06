@@ -31,6 +31,7 @@ const toggleElderVersion = () => {
     document.body.classList.toggle('theme-elder')
 }
 
+const overlayShow = ref(true)
 </script>
 
 <template>
@@ -51,7 +52,7 @@ const toggleElderVersion = () => {
                         <div class="banner-subtitle">阅读是一种感悟人生的艺术</div>
                     </div>
 
-                    <div class="elder-button" @click="toggleElderVersion">{{ isElderVersion ? '常规版' : '长辈版'}}</div>
+                    <div class="elder-button" @click="toggleElderVersion">{{ isElderVersion ? '常规版' : '长辈版' }}</div>
                 </div>
 
                 <div class="homepage-search">
@@ -174,8 +175,8 @@ const toggleElderVersion = () => {
                                 <div class="book-title">万叶集</div>
                                 <div class="book-author">孙甘露 著 / 上海文艺出版社</div>
                                 <div class="book-intro">本书是日本恒远悠久的和歌选集，被誉为“日本的《诗经》”。作者身份自天皇、文人武将、平民至无名无姓者，和歌内容自山河国土至细腻情爱
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </router-link>
                 </div>
@@ -196,8 +197,8 @@ const toggleElderVersion = () => {
                             </div>
                         </router-link>
                     </div>
-                <router-link to="/book-category?cateid=1">
-                    <div class="check-all">查看所有</div>
+                    <router-link to="/book-category?cateid=1">
+                        <div class="check-all">查看所有</div>
                     </router-link>
                 </div>
             </div>
@@ -213,8 +214,8 @@ const toggleElderVersion = () => {
                             </router-link> -->
                         <BookCard v-bind="bookProps2" v-for="index in 6" />
                     </div>
-                <router-link to="/book-category?cateid=2">
-                    <div class="check-all">查看所有</div>
+                    <router-link to="/book-category?cateid=2">
+                        <div class="check-all">查看所有</div>
                     </router-link>
                 </div>
             </div>
@@ -267,6 +268,13 @@ const toggleElderVersion = () => {
         </div>
 
         <BottomNavigate />
+
+        <van-overlay :show="overlayShow" :lock-scroll="true" @click="overlayShow = false">
+            <div class="wrapper" @click.stop>
+                关爱老人！图书馆长辈版可以点击这里进入体验。
+                <SvgIcon name="vector-arrow" class="icon"/>
+            </div>
+        </van-overlay>
     </div>
 </template>
 
@@ -276,6 +284,32 @@ const toggleElderVersion = () => {
     padding: 0 16px;
     color: var(--main-color-blue);
     padding-bottom: 90px;
+}
+
+.van-overlay {
+    z-index: 1000;
+
+    .wrapper {
+        width: 240px;
+        margin: 0 auto;
+        margin-top: 80px;
+        padding: 16px 18px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #000000;
+        position: relative;
+        background-color: #fff;
+        border-radius: 8px;
+        .icon {
+            position: absolute;
+            top: -39px;
+            right: 0;
+            width: 46px;
+            height: 35px;
+            color: #fff;
+        }
+    }
 }
 
 .background-container {
@@ -401,11 +435,13 @@ const toggleElderVersion = () => {
         display: flex;
         flex-direction: column;
         align-items: center;
+
         .icon {
             width: 56px;
             height: 56px;
             margin-bottom: 4px;
         }
+
         span {
             font-size: var(--homepage-nav-font-size);
             line-height: var(--homepage-nav-line-height);

@@ -63,13 +63,13 @@ const popularList = reactive([
                 <span class="clear">清除</span>
             </div>
             <div class="tag-box">
-                <TagButton :text="text" :select="select" v-for="{text, select} in historyList" />
+                <TagButton :text="text" :select="select" v-for="{ text, select } in historyList" />
             </div>
         </div>
         <div class="popular-box">
             <div class="title">热门检索</div>
             <div class="tag-box">
-                <TagButton :text="text" :select="select" v-for="{text, select} in popularList" />
+                <TagButton :text="text" :select="select" v-for="{ text, select } in popularList" />
             </div>
 
         </div>
@@ -113,8 +113,8 @@ const popularList = reactive([
 
         .title {
             font-weight: 700;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: var(--main-font-size2);
+            line-height: var(--main-line-height2);
             color: var(--text-color4);
             margin-bottom: 16px;
             position: relative;
@@ -123,8 +123,8 @@ const popularList = reactive([
                 position: absolute;
                 right: 0;
                 top: 0;
-                font-size: 14px;
-                line-height: 20px;
+                font-size: var(--font-size2);
+                line-height: var(--main-line-height2);
                 color: var(--main-color-blue);
             }
         }
