@@ -6,7 +6,10 @@ import { useRoute } from 'vue-router';
 
 const category = reactive([
     {
-        name: '马克思主义、列宁主义、毛泽东思想、邓小平理论'
+        name: '马克思主义、列宁主义、毛泽东思想、邓小平理论',
+        subcategory: [
+            '自然科学', '数理科学和化学', '天文学、地球科学', '生物科学', '医药、卫生', '农业科学', '工业技术', '交通运输', '航空、航天', '环境科学、安全科学', '综合性图书'
+        ]
     },
     {
         name: '哲学、宗教'
@@ -80,8 +83,15 @@ const cateCantainer = ref(null)
 const activeInex = cateId ? ref(cateId) : ref(0)
 const onSidebarChange = (index) => {
     activeInex.value = index
+    if (category[index].subcategory?.length) {
+        subCateShow.value = true
+    } else {
+        subCateShow.value = false
+    }
     cateCantainer.value.scrollTop = 0
 }
+
+const subCateShow = ref(true)
 
 const bookProps = {
     title: '哲学，为人生烦恼找答案',
@@ -113,9 +123,12 @@ const bookProps = {
 
             <div class="category-container" ref="cateCantainer">
                 <template v-for="(item, index) in category" :key="`content-${item.name}`">
-                    <div class="category-content" v-show="index == activeInex">
+                    <div class="subcategory-list" v-show="index == activeInex && subCateShow">
+                        <div class="subcategory-item " v-for="subcate in item.subcategory" @click="subCateShow = false">{{ subcate }}</div>
+                    </div>
+                    <div class="category-content" v-show="index == activeInex && !subCateShow">
                         {{ item.name }}
-                        <BookCard v-for="i in 10" v-bind="bookProps"/>
+                        <BookCard v-for="i in 10" v-bind="bookProps" />
                     </div>
                 </template>
             </div>
@@ -160,6 +173,28 @@ const bookProps = {
                 max-width: calc(100vw - 27vw - 30px - var(--book-cover-container-width1) - 16px);
             }
 
+        }
+
+        .subcategory-list {
+            padding: 20px 16px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 16px 12px;
+
+            .subcategory-item {
+                height: 45px;
+                padding: 0 8px;
+                background: #F0F8FF;
+                border-radius: 4px;
+                font-weight: 500;
+                font-size: 14px;
+                line-height: 45px;
+                text-align: center;
+                color: #33608A;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
         }
     }
 

@@ -133,6 +133,10 @@ const routes = [
     {
         path: '/search-result',
         component: () => import('@/pages/SearchResult.vue')
+    },
+    {
+        path: '/borrow-history',
+        component: () => import('@/pages/BorrowHistory.vue')
     }
 
 ]

@@ -55,6 +55,15 @@ const router = useRouter()
                         <SvgIcon class="icon" name="icon-right" />
                     </div>
                 </router-link>
+                <router-link to="/borrow-history">
+                    <div class="list-item">
+                        <div>
+                            <SvgIcon class="icon" name="usercenter-borrow-history" />
+                            <span>借阅历史</span>
+                        </div>
+                        <SvgIcon class="icon" name="icon-right" />
+                    </div>
+                </router-link>
                 <router-link to="/ecard">
                     <div class="list-item">
                         <div>
