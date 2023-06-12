@@ -393,7 +393,7 @@ const overlayShow = ref(true)
             width: calc(100% - 38px - 30px);
             height: 36px;
             border: none;
-            font-size: 12px;
+            font-size: var(--main-font-size1);
             line-height: 17px;
 
             &::placeholder {
@@ -519,8 +519,8 @@ const overlayShow = ref(true)
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 12px;
-    line-height: 18px;
+    font-size: var(--main-font-size1);
+    line-height: var(--main-line-height1);
     color: #88B9F3;
 
     >span {
@@ -784,10 +784,10 @@ const overlayShow = ref(true)
             }
 
             :deep(.book-author) {
-                font-size: 10px;
-                line-height: 14px;
+                font-size: var(--main-font-size0);
+                line-height: var(--main-line-height0);
                 white-space: normal;
-                max-height: 40px;
+                max-height: 48px;
                 overflow: hidden;
                 text-overflow: ellipsis;
                 -webkit-line-clamp: 3;
@@ -826,20 +826,20 @@ const overlayShow = ref(true)
             }
 
             :deep(.book-author) {
-                font-size: 10px;
-                line-height: 14px;
+                font-size: var(--main-font-size0);
+                line-height: var(--main-line-height0);
                 margin-bottom: 5px;
             }
 
             :deep(.book-publisher) {
-                font-size: 10px;
-                line-height: 14px;
+                font-size: var(--main-font-size0);
+                line-height: var(--main-line-height0);
                 margin-bottom: 5px;
             }
 
             :deep(.book-time) {
-                font-size: 10px;
-                line-height: 14px;
+                font-size: var(--main-font-size0);
+                line-height: var(--main-line-height0);
                 margin-bottom: 5px;
             }
         }

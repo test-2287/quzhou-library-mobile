@@ -24,6 +24,10 @@
     --divider-color: #E6EFF8;
     --stroke-color1: #C1D4EF;
     --stroke-color2: #67A3FE;
+
+    --font-size10: 10px;
+    --line-height14: 14px;
+    --line-height16: 16px;
     
     --font-size12: 12px;
     --line-height18: 18px;
@@ -61,6 +65,8 @@
 }
 
 :root {
+    --main-font-size0: var(--font-size10);
+    --main-line-height0: var(--line-height14);
     --main-font-size1: var(--font-size12);
     --main-line-height1: var(--line-height18);
     --main-font-size2: var(--font-size14);
@@ -77,6 +83,8 @@
 }
 
 body.theme-elder {
+    --main-font-size0: var(--font-size12);
+    --main-line-height0: var(--line-height16);
     --main-font-size1: var(--font-size16);
     --main-line-height1: var(--line-height22);
     --main-font-size2: var(--font-size18);

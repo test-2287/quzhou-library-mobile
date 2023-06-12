@@ -63,7 +63,7 @@
         width: calc(100vw - 38px * 2);
 
         .title {
-            font-size: 18px;
+            font-size: var(--main-font-size4);
             line-height: 26px;
             font-weight: bold;
             color: var(--text-color4);
@@ -90,8 +90,8 @@
             border-top: 1px solid #E2E2E2;
             padding-top: 20px;
             font-weight: 500;
-            font-size: 14px;
-            line-height: 20px;
+            font-size: var(--main-font-size2);
+            line-height: var(--main-line-height2);
             color: var(--text-color1);
 
             .item:not(:last-child) {

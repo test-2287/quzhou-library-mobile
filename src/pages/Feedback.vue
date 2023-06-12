@@ -44,22 +44,24 @@ const clearErrors = () => {
 }
 
 const onSubmit = () => {
-    clearErrors()
-    validate();
-    console.log(Object.keys(errors))
-    if (Object.keys(errors).length) {
-        return;
-    }
-    console.log('submit', toRaw(data));
+    // clearErrors()
+    // validate();
+    // console.log(Object.keys(errors))
+    // if (Object.keys(errors).length) {
+    //     return;
+    // }
+    // console.log('submit', toRaw(data));
     showToast({
         message: '提交成功',
-        duration: 3000,
+        duration: 10000,
         position: 'bottom',
         onClose: () => {
-            router.push('/my-feedback')
+            // router.push('/my-feedback')
         }
     })
 }
+
+
 
 </script>
 
@@ -151,12 +153,14 @@ const onSubmit = () => {
 
         .myfeedback {
             margin-top: 24px;
-            font-size: 14px;
+            font-size: var(--main-font-size2);
             line-height: 20px;
             color: var(--text-color1);
             text-align: center;
             font-weight: bold;
         }
+
+
     }
 }
 </style>

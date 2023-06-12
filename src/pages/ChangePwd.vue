@@ -99,8 +99,8 @@ const onSubmit = () => {
     }
 
     .pwd-hint {
-        font-size: 12px;
-        line-height: 18px;
+        font-size: var(--main-font-size1);
+        line-height: var(--main-line-height1);
         text-align: center;
         color: var(--text-color1);
     }

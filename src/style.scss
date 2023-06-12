@@ -241,8 +241,8 @@ input:focus {
 
       .error-message {
           color: #FF6969;
-          font-size: var(--font-size12);
-          line-height: var(--line-height18);
+          font-size: var(--main-font-size2);
+          line-height: var(--main-line-height2);
           margin-top: 6px;
       }
 
@@ -261,12 +261,30 @@ input:focus {
       height: 42px;
       background-color: var(--main-color-blue);
       border-radius: 6px;
-      font-size: var(--font-size14);
+      font-size: var(--main-font-size2);
       line-height: var(--line-height20);
       color: #fff;
       text-align: center;
       line-height: 40px;
       margin-top: 20px;
       font-weight: bold;
+  }
+}
+
+.van-dialog {
+  .van-dialog__header {
+      font-size: var(--main-font-size3);
+  }
+  .van-dialog__message {
+      font-size: var(--main-font-size2);
+  }
+  .van-button__text {
+      font-size: var(--main-font-size3);
+  }
+}
+
+.van-toast {
+  .van-toast__text {
+    font-size: var(--main-font-size2);
   }
 }

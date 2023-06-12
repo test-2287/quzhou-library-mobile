@@ -283,10 +283,10 @@ const paymentMethod = ref('');
                 }
 
                 span {
-                    /* font-size: var(--main-font-size1);
-                    line-height: var(--main-line-height1); */
-                    font-size: 12px;
-                    line-height: 18px;
+                    font-size: var(--main-font-size1);
+                    line-height: var(--main-line-height1);
+                    /* font-size: 12px;
+                    line-height: 18px; */
                     color: var(--text-color-link);
                 }
 

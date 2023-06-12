@@ -359,7 +359,7 @@ const checkDelivery = () => {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--font-size14);
+            font-size: var(--main-font-size2);
             line-height: var(--line-height20);
             font-weight: bold;
 

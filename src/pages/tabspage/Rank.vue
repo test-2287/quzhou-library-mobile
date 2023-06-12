@@ -28,7 +28,7 @@ const bookProps = {
                 <van-config-provider :theme-vars="{
                     buttonDefaultBackground: 'var(--background-color2)',
                     buttonDefaultColor: 'var(--text-color1)',
-                    buttonFontSize: 'var(--main-font-size2)',
+                    buttonSmallFontSize: 'var(--main-font-size2)',
                     buttonLineHeight: 'var(--main-line-height2)'
                 }">
                     <van-button size="small" v-for="(item, index) in filterList" :key="index"

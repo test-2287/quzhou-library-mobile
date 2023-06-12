@@ -73,7 +73,7 @@ const router = useRouter()
             border: 1px solid var(--stroke-color1);
             border-radius: 18px;
             padding: 8px 22px;
-            font-size: 14px;
+            font-size: var(--main-font-size2);
             line-height: 20px;
             color: var(--text-color1);
         }

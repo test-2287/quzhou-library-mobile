@@ -34,6 +34,9 @@ const toggleStar = () => {
             <BookDetailCard />
 
             <div class="book_detail-tabs_info">
+                <van-config-provider :theme-vars="{
+                    tabFontSize: 'var(--main-font-size2)'
+                }">
                 <van-tabs>
                     <van-tab title="馆藏信息">
                         <LibraryCollection />
@@ -58,6 +61,7 @@ const toggleStar = () => {
                             UP，2006）。马克利在18世纪研究、科学文化史研究和数字媒体研究等领域发表学术论文近百篇，主编学术文集多部，并担任知名期刊的特刊客座编辑。</div>
                     </van-tab>
                 </van-tabs>
+                </van-config-provider>
             </div>
 
         </div>

@@ -187,7 +187,7 @@ const bookProps = {
                 background: #F0F8FF;
                 border-radius: 4px;
                 font-weight: 500;
-                font-size: 14px;
+                font-size: var(--main-font-size2);
                 line-height: 45px;
                 text-align: center;
                 color: #33608A;

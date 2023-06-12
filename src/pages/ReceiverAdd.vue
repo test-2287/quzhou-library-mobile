@@ -100,8 +100,12 @@ const onSubmit = () => {
                 </div>
                 <span class="error-message">{{ errors.cascaderValue }}</span>
                 <van-popup round position="bottom" v-model:show="pickerShow">
+                    <van-config-provider :theme-vars="{
+                        cascaderTitleFontSize: 'var(--main-font-size3)'
+                    }">
                     <van-cascader v-model="data.cascaderValue" title="请选择所在地区" :options="options"
                         @close="pickerShow = false" @finish="onFinish" />
+                    </van-config-provider>
                 </van-popup>
             </div>
 
@@ -134,6 +138,15 @@ const onSubmit = () => {
             font-size: 14px;
             line-height: 20px;
             color: var(--text-color1);
+        }
+    }
+
+    &:deep(.van-cascader__tabs) {
+        .van-tab__text {
+            font-size: var(--main-font-size2);
+        }
+        .van-cascader__option {
+            font-size: var(--main-font-size2);
         }
     }
 

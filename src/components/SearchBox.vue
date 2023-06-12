@@ -28,7 +28,7 @@ defineEmits(['update:modelValue'])
         width: calc(100% - 38px - 30px);
         height: 36px;
         border: none;
-        font-size: 12px;
+        font-size: var(--main-font-size1);
         line-height: 17px;
 
         &::placeholder {

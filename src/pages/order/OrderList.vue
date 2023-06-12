@@ -14,12 +14,16 @@ const checkOrderDetail = () => {
 
 <template>
     <div class="order-list-page">
-        <van-tabs>
-            <van-tab title="全部"></van-tab>
-            <van-tab title="待支付"></van-tab>
-            <van-tab title="待处理"></van-tab>
-            <van-tab title="已取消"></van-tab>
-        </van-tabs>
+        <van-config-provider :theme-vars="{
+            tabFontSize: 'var(--main-font-size2)',
+        }">
+            <van-tabs>
+                <van-tab title="全部"></van-tab>
+                <van-tab title="待支付"></van-tab>
+                <van-tab title="待处理"></van-tab>
+                <van-tab title="已取消"></van-tab>
+            </van-tabs>
+        </van-config-provider>
 
         <div class="order-list">
             <div class="order-item">
@@ -41,31 +45,31 @@ const checkOrderDetail = () => {
                 <div class="books-container">
                     <div class="book-item">
                         <div class="book-cover">
-                            <img :src="BookCoverDefault" alt="">
+                            <img :src=" BookCoverDefault " alt="">
                         </div>
                         <div class="book-title">中国哲学史 第一部完整的具有现代意义</div>
                     </div>
                     <div class="book-item">
                         <div class="book-cover">
-                            <img :src="BookCoverDefault" alt="">
+                            <img :src=" BookCoverDefault " alt="">
                         </div>
                         <div class="book-title">中国哲学史 第一部完整的具有现代意义</div>
                     </div>
                     <div class="book-item">
                         <div class="book-cover">
-                            <img :src="BookCoverDefault" alt="">
+                            <img :src=" BookCoverDefault " alt="">
                         </div>
                         <div class="book-title">中国哲学史 第一部完整的具有现代意义</div>
                     </div>
                     <div class="book-item">
                         <div class="book-cover">
-                            <img :src="BookCoverDefault" alt="">
+                            <img :src=" BookCoverDefault " alt="">
                         </div>
                         <div class="book-title">中国哲学史 第一部完整的具有现代意义</div>
                     </div>
                     <div class="book-item">
                         <div class="book-cover">
-                            <img :src="BookCoverDefault" alt="">
+                            <img :src=" BookCoverDefault " alt="">
                         </div>
                         <div class="book-title">中国哲学史 第一部完整的具有现代意义</div>
                     </div>
@@ -74,13 +78,13 @@ const checkOrderDetail = () => {
                     <span class="books-count">共5本图书</span>
                     <div class="box-right">
                         <div class="button cancel-order" @click="dialogShow = true">取消订单</div>
-                        <div class="button check-order" @click="checkOrderDetail">查看订单</div>
+                        <div class="button check-order" @click=" checkOrderDetail ">查看订单</div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <van-dialog v-model:show="dialogShow" width="260" title="你需要取消订单吗？">
+        <van-dialog v-model:show=" dialogShow " width="260" title="你需要取消订单吗？">
             <template #footer>
                 <div class="dialog-footer">
                     <div class="dialog-button cancel" @click="dialogShow = false">再想一下</div>
@@ -89,7 +93,7 @@ const checkOrderDetail = () => {
             </template>
         </van-dialog>
 
-    
+
 
     </div>
 </template>
@@ -254,29 +258,30 @@ const checkOrderDetail = () => {
         padding-bottom: 20px;
 
         .dialog-button {
-        width: 100px;
-        height: 42px;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: var(--font-size14);
-        line-height: var(--line-height20);
-        font-weight: bold;
+            width: 100px;
+            height: 42px;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--main-font-size2);
+            line-height: var(--line-height20);
+            font-weight: bold;
 
-        &.cancel {
-            color: var(--text-color6);
-            border: 1px solid var(--stroke-color1);
-        }
+            &.cancel {
+                color: var(--text-color6);
+                border: 1px solid var(--stroke-color1);
+            }
 
-        &.confirm {
-            color: #fff;
-            background: var(--main-color-blue);
+            &.confirm {
+                color: #fff;
+                background: var(--main-color-blue);
+            }
         }
     }
-    }
 
 
 
-    
-}</style>
+
+}
+</style>

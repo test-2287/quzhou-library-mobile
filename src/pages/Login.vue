@@ -152,8 +152,8 @@ const onSubmit = () => {
         left: 50%;
         transform: translateX(-50%);
         font-weight: 500;
-        font-size: 14px;
-        line-height: 19px;
+        font-size: var(--main-font-size2);
+        line-height: var(--main-line-height2);
         color: #FFFFFF;
     }
 

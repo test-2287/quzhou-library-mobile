@@ -90,7 +90,7 @@ const bookProps2 = {
         </div>
         <van-config-provider :theme-vars="{
             dropdownMenuHeight: '44px',
-            dropdownMenuTitleFontSize: '14px',
+            dropdownMenuTitleFontSize: 'var(--main-font-size2)',
             dropdownMenuTitleTextColor: 'var(--text-color1)',
             dropdownMenuTitleActiveTextColor: 'var(--main-color-blue)',
             dropdownMenuOptionActiveColor: 'var(--main-color-blue)',
@@ -190,7 +190,7 @@ const bookProps2 = {
         margin-bottom: 37px;
 
         .title {
-            font-size: 14px;
+            font-size: var(--main-font-size2);
             color: var(--text-color4);
             margin-bottom: 8px;
             font-weight: 500;
@@ -218,7 +218,7 @@ const bookProps2 = {
             width: calc((100vw - 40px - 15px) / 2);
             height: 36px;
             border-radius: 18px;
-            font-size: 14px;
+            font-size: var(--main-font-size2);
             line-height: 20px;
             display: flex;
             align-items: center;
@@ -237,11 +237,15 @@ const bookProps2 = {
         }
     }
 
+    &:deep(.van-cell) {
+        font-size: var(--main-font-size2)
+    }
+
     .search-result {
         padding: 12px 16px;
 
         .result-text {
-            font-size: 12px;
+            font-size: var(--main-font-size1);
             line-height: 18px;
             color: var(--text-color2);
             margin-bottom: 12px;
@@ -268,8 +272,8 @@ const bookProps2 = {
         }
 
         .text {
-            font-size: 14px;
-            line-height: 20px;
+            font-size: var(--main-font-size2);
+            line-height: var(--main-line-height2);
             color: var(--text-color2);
         }
     }

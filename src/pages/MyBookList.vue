@@ -109,8 +109,8 @@ const bookProps = {
             padding: 9px 12px;
 
             .check-all-text {
-                font-size: var(--font-size12);
-                line-height: var(--line-height18);
+                font-size: var(--main-font-size2);
+                line-height: var(--main-line-height2);
                 color: var(--text-color1);
                 margin-left: 10px;
             }

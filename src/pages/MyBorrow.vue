@@ -287,14 +287,18 @@ const toggleAll = () => {
             }
 
             .book-title {
-                font-size: var(--font-size12);
-                line-height: var(--line-height18);
+                /* font-size: var(--font-size12);
+                line-height: var(--line-height18); */
+                font-size: var(--main-font-size1);
+                line-height: var(--main-line-height1);
                 margin-bottom: 6px;
             }
 
             .book-author {
                 font-size: var(--font-size12);
                 line-height: var(--line-height18);
+                /* font-size: var(--main-font-size1);
+                line-height: var(--main-line-height1); */
                 color: var(--text-color1);
             }
         }
@@ -304,8 +308,9 @@ const toggleAll = () => {
             flex-direction: column;
             align-items: center;
             color: var(--main-color-orange);
-            font-size: var(--font-size12);
-            line-height: 15px;
+            /* font-size: var(--font-size12); */
+            font-size: var(--main-font-size1);
+            line-height: var(--main-line-height1);
         }
     }
 
@@ -323,7 +328,8 @@ const toggleAll = () => {
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: var(--font-size14);
+            /* font-size: var(--font-size14); */
+            font-size: var(--main-font-size2);
             line-height: var(--line-height20);
             font-weight: bold;
 
