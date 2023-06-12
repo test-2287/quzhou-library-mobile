@@ -163,9 +163,9 @@ const onSubmit = () => {
         left: 0;
         width: 100%;
         height: 357px;
-        background-image: url('../assets/login-bg.svg');
+        background-image: url('../assets/login-bg.svg'), url('../assets/login-bg-icon.svg');
         background-repeat: no-repeat;
-        background-position: right 44px bottom 0;
+        background-position: right 44px bottom 0, right 115px top 60px;
         padding: 35px;
 
         .title {
